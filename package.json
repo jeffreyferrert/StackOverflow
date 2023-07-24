@@ -1,0 +1,17 @@
+{
+  "name": "Stackoverflow_fs",
+  "version": "1.0.0",
+  "description": "You know it!",
+  "engines": {
+    "node": "16.x"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,7 @@
+.li-container {
+    background-color: blue;
+
+    /* color: aqua; */
+    padding: 16px;
+    border-bottom: 1px solid black;
+}

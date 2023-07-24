@@ -1,0 +1,6 @@
+.q-main-container {
+    display: flex;
+    /* flex-direction: column; */
+    /* color: blue; */
+    justify-content: center;
+}

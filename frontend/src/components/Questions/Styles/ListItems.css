@@ -1,0 +1,105 @@
+.lis-main-container {
+    width: 100%;
+    max-width: 727px;
+    padding: 24px;
+}
+
+.lis-headline {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.lis-headline>p {
+    font-size: 22px;
+    margin-bottom: 12px;
+    margin-right: 12px;
+    vertical-align: baseline;
+}
+
+.lis-headline>button {
+    color: white;
+    font-size: 13px;
+    background-color: hsla(206, 100%, 52%, 1);
+    padding: 8px 10px 8px 10px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    align-self: center;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.lis-headline>button:hover {
+    background-color: hsla(206, 100%, 40%, 1);
+}
+
+
+.lis-headline2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lis-headline2-a {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    margin-right: 12px;
+}
+
+.lis-headline2-b {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    width: 420px;
+    font-size: 11px;
+}
+
+
+
+
+.lis-headline2-b>ul {
+    display: flex;
+    list-style: none;
+
+}
+
+.lis-headline2-b>ul>li {
+    color: hsl(210, 8%, 25%);
+    background-color: white;
+    /* if selected add this bg color */
+    /* background-color: hsl(210,8%,90%); */
+    padding: 9.6px;
+    border: 1px solid hsl(210, 8%, 75%);
+    border-radius: 3px;
+    align-self: center;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.lis-headline2-b>ul>li:hover {
+    background-color: hsl(210, 8%, 90%);
+}
+
+.lis-headline2-b>button {
+    color: hsl(205, 47%, 42%);
+    background-color: hsl(205, 46%, 92%);
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 9.2px;
+
+    align-self: center;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+    word-spacing: 40px;
+}
+
+.lis-headline2-b>button:hover {
+    background-color: hsl(205, 57%, 81%);
+    color: hsl(205, 46%, 32%);
+}
