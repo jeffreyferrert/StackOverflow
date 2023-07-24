@@ -1,9 +1,9 @@
 {
-  "name": "Stackoverflow_fs",
+  "name": "stackoverflow_fs",
   "version": "1.0.0",
   "description": "You know it!",
   "engines": {
-    "node": "16.x"
+    "node": "16.20.0"
   },
   "directories": {
     "lib": "lib"
@@ -13,5 +13,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffreyferrert/Stackunderflow.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jeffreyferrert/Stackunderflow/issues"
+  },
+  "homepage": "https://github.com/jeffreyferrert/Stackunderflow#readme"
 }
