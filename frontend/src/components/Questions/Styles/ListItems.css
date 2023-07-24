@@ -7,14 +7,13 @@
 .lis-headline {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 12px;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .lis-headline>p {
     font-size: 22px;
-    margin-bottom: 12px;
-    margin-right: 12px;
-    vertical-align: baseline;
+    margin: 0px;
 }
 
 .lis-headline>button {
@@ -23,7 +22,7 @@
     background-color: hsla(206, 100%, 52%, 1);
     padding: 8px 10px 8px 10px;
     border: 1px solid transparent;
-    border-radius: 3px;
+    border-radius: 7px;
     align-self: center;
     cursor: pointer;
     white-space: nowrap;
@@ -38,14 +37,16 @@
 .lis-headline2 {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
+    margin-bottom: 0px;
 }
 
 .lis-headline2-a {
-    font-size: 12px;
+    font-size: 15px;
     margin: 0;
     padding: 0;
     text-align: left;
+    align-items: baseline;
     margin-right: 12px;
 }
 
@@ -56,6 +57,7 @@
     text-align: left;
     width: 420px;
     font-size: 11px;
+    margin-bottom: 5px;
 }
 
 
@@ -64,6 +66,8 @@
 .lis-headline2-b>ul {
     display: flex;
     list-style: none;
+    margin-bottom: 0;
+
 
 }
 
