@@ -1,6 +1,6 @@
 .lsb-main-container {
     width: 164px;
-    background-color: aqua;
+    background-color: gray;
     flex-shrink: 0;
     /* z-index: 1000; */
     box-shadow: 0 0 0 hsla(210,8%,5%,0.05);
