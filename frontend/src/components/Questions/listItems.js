@@ -9,24 +9,29 @@ function ListItems() {
 
                 <div className="lis-headline">
                     <p>All Questions</p>
-                    <button>Ask a Question</button>
+                    <button>Ask Question</button>
                 </div>
 
                 <div className="lis-headline2">
                     <div className="lis-headline2-a">
-                        23,000,000 questions
+                        23,819,276 questions
                     </div>
                     <div className="lis-headline2-b">
                         <ul>
-                            <li>Newest</li>
+                            <li className="lis-h-b1">Newest</li>
                             <li>Active</li>
                             <li>Bountied</li>
                             <li>Unanswered</li>
-                            <li>More</li>
+                            <li className="lis-h-b2">
+                                More
+                                <span />
+                                <i class="fa-solid fa-caret-down" size="lg" />
+                            </li>
                         </ul>
 
                         <button>
                             <i class="fa-solid fa-caret-down" size="lg" style={{ color: "#39739d", }} />
+                            <span />
                             Filter
                         </button>
 
@@ -36,6 +41,11 @@ function ListItems() {
                 <hr />
             </div>
 
+            <ListItem />
+            <ListItem />
+            <ListItem />
+            <ListItem />
+            <ListItem />
             <ListItem />
             <ListItem />
             <ListItem />

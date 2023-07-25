@@ -34,12 +34,20 @@ function LoginFormPage() {
       });
   };
 
+  const demoUser = (e) => {
+    e.preventDefault();
+    const demoUsername = "test";
+    const demoPassword = "password";
+    dispatch(sessionActions.login({ credential: demoUsername, password: demoPassword }));
+  };
+
   return (
     <div className="li-main-container">
 
       <img className="li-icon" src={temp} alt="so_icon" />
+    <div className="li-form-container">
 
-      <form onSubmit={handleSubmit} className="li-form-container">
+      <form onSubmit={handleSubmit} >
 
         <ul>
           {errors.map(error => <li key={error}>{error}</li>)}
@@ -68,12 +76,13 @@ function LoginFormPage() {
         </label>
 
         <button type="submit" className="li-login">Log In</button>
-        <button type="submit" className="li-login">Demo User</button>
 
       </form>
+      <button onClick={demoUser} className="li-login">Demo User</button>
+    </div>
 
       <div className="redirect-su">
-        Don’t have an account? 
+        Don’t have an account?
         <Link to="signup" className="link"> Sign up</Link>
       </div>
     </div>
