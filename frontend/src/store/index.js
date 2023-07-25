@@ -1,9 +1,12 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session'
+import * as questionActions from './questions';
+import questionsReducer from './questions';
 
 const rootReducer = combineReducers({
-  session
+  session,
+  questions: questionsReducer
 });
 
 let enhancer;
@@ -15,6 +18,7 @@ if (process.env.NODE_ENV === 'production') {
   const composeEnhancers =
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   enhancer = composeEnhancers(applyMiddleware(thunk, logger));
+  window.questionActions = questionActions;
 }
 
 const configureStore = (preloadedState) => {

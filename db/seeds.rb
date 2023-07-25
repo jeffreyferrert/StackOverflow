@@ -9,6 +9,7 @@
 ApplicationRecord.transaction do 
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
+  Question.destroy_all
   User.destroy_all
 
   puts "Resetting primary keys..."
@@ -30,6 +31,14 @@ ApplicationRecord.transaction do
       email: Faker::Internet.unique.email,
       password: 'password'
     }) 
+  end
+  
+  10.times do 
+    Question.create!({
+      title: Faker::Hacker.say_something_smart,
+      body: Faker::Lorem.paragraph(sentence_count: 20, supplemental: true, random_sentences_to_add: 10),
+      user_id: Faker::Number.between(from: 1, to: 10)
+    })
   end
 
   puts "Done!"

@@ -1,11 +1,12 @@
 class Api::QuestionsController < ApplicationController
     def index
         @questions = Question.all
-        render json: @questions #:index
+        render :index
     end
 
     def show
         @question = Question.find_by(id: params[:id])
+        render :show
     end
 
     def create

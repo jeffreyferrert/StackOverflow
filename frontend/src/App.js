@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation";
 import Landing from "./components/LandingPage";
 import Questions from "./components/Questions";
 import About from "./components/About";
+import ShowItem from "./components/Questions/showItem";
 
 function App() {
   return (
@@ -21,8 +22,11 @@ function App() {
         <Route path="/signup">
           <SignupFormPage />
         </Route>
-        <Route path="/questions">
+        <Route exact path="/questions">
           <Questions />
+        </Route>
+        <Route path="/questions/:questionId">
+          <ShowItem />
         </Route>
         <Route path="/about">
           <About />
