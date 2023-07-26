@@ -8,6 +8,23 @@ import LeftSideBar from "./leftSideBar";
 import RigthSideBar from "./rightSideBar";
 
 function ShowItem() {
+  const sessionUser = useSelector((state) => state.session.user);
+
+  let addCommentsConditional;
+  if (sessionUser) {
+    addCommentsConditional = (
+      <>
+        <span>Add a comment USER #</span>
+      </>
+    );
+  } else {
+    addCommentsConditional = (
+      <>
+        <span>Add a comment EXTRANGER</span>
+      </>
+    );
+  }
+
   const questionId = useParams().questionId;
   const dispatch = useDispatch();
   const question = useSelector(getQuestion(questionId));
@@ -24,7 +41,7 @@ function ShowItem() {
     const minute = date.getMinutes().toString().padStart(2, "0");
     return `${month} ${day} at ${hour}:${minute}`;
   };
-  
+
   return (
     <div className="sq-main-container">
       <LeftSideBar />
@@ -39,10 +56,12 @@ function ShowItem() {
             <div className="sq-headline-bottom">
               <ul>
                 <li>
-                  <span>Asked</span>{formatDate(question.createdAt)}
+                  <span>Asked</span>
+                  {formatDate(question.createdAt)}
                 </li>
                 <li>
-                  <span>Modified</span>{formatDate(question.updatedAt)}
+                  <span>Modified</span>
+                  {formatDate(question.updatedAt)}
                 </li>
                 <li>
                   <span>View</span>5 times
@@ -54,6 +73,8 @@ function ShowItem() {
 
           <div className="sq-post-layout">
             <div className="sq-post-left-container">
+            <div className="sq-post-left-container-top">
+
               <div className="sq-votecell">
                 <button className="">
                   <i
@@ -76,7 +97,6 @@ function ShowItem() {
                 <div className="sq-post">
                   <p>{question.body}</p>
                 </div>
-
                 <div className="sq-post-taglist">
                   <ul>
                     <li>c#</li>
@@ -86,7 +106,6 @@ function ShowItem() {
                     <li>sql-update</li>
                   </ul>
                 </div>
-
                 <div className="sq-post-menu">
                   <div className="sq-actions">
                     <span>Share</span>
@@ -94,24 +113,48 @@ function ShowItem() {
                   </div>
 
                   <div className="sq-owner">
-                  <span>Asked</span>{formatDate(question.createdAt)}
-                  <div className="sq-sub-owner">
-
-                    <img src={photo} alt="user_photo" className="sq-c-photo" />
-                    <a href="#.com">j.ferrertorres</a>
+                    <span>Asked</span>
+                    {formatDate(question.createdAt)}
+                    <div className="sq-sub-owner">
+                      <img
+                        src={photo}
+                        alt="user_photo"
+                        className="sq-c-photo"
+                      />
+                      <a href="#.com">j.ferrertorres</a>
                     </div>
                   </div>
                 </div>
+                <div className="sq-add-comment">{addCommentsConditional}</div>
+              </div>
+              </div>
 
-                {/* <div>[WIP]ADDCOMMENTS</div> */}
+              <div className="sq-post-left-container-bottom">
                 <div className="sq-relatedq">
+                  <p>Related questions</p>
+
                   <ul>
-                    <li>Q1</li>
-                    <li>Q2</li>
-                    <li>Q3</li>
+                    <li>
+                      If we index the array, we can get to the JSON array
+                      through the optical JBOD monitor!
+                    </li>
+                    <li>
+                      I'll input the primary USB interface, that should firewall
+                      the SCSI protocol!
+                    </li>
+                    <li>
+                      Indexing the alarm won't do anything, we need to connect
+                      the virtual ssl matrix!
+                    </li>
                   </ul>
                 </div>
-                Browse other questions tagged ...
+                <div className="sq-answer">
+                  <p>Your Answer</p>
+
+                  <div className="sq-answer-box">
+                    <textarea></textarea>
+                  </div>
+                </div>
               </div>
             </div>
 
