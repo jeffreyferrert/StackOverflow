@@ -3,16 +3,15 @@ import photo from "../assets/stackoverflow_icon.png";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const month = date.toLocaleString('en-US', { month: 'short' });
-    const day = date.toLocaleString('en-US', { day: 'numeric' });
-    const hour = date.getHours().toString().padStart(2, '0');
-    const minute = date.getMinutes().toString().padStart(2, '0');
-    return `${month} ${day} at ${hour}:${minute}`;
-  };
+  const date = new Date(dateString);
+  const month = date.toLocaleString("en-US", { month: "short" });
+  const day = date.toLocaleString("en-US", { day: "numeric" });
+  const hour = date.getHours().toString().padStart(2, "0");
+  const minute = date.getMinutes().toString().padStart(2, "0");
+  return `${month} ${day} at ${hour}:${minute}`;
+};
 
 function ListItem({ question }) {
-
   return (
     <div className="li-container">
       <div className="li-container-left">
@@ -40,10 +39,7 @@ function ListItem({ question }) {
 
           <div className="li-c-user">
             <img src={photo} alt="user_photo" className="li-c-photo" />
-            <div className="li-c-username">
-              {" "}
-              <a href="#.com">j.ferrertorres</a>{" "}
-            </div>
+            <div className="li-c-username"></div>
             <span />
             <div className="li-c-lastmodified">
               {"answered " + formatDate(question.createdAt)}

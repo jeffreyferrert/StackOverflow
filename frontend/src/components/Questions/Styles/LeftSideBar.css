@@ -2,12 +2,10 @@
     width: 164px;
     background-color: gray;
     flex-shrink: 0;
-    /* z-index: 1000; */
     box-shadow: 0 0 0 hsla(210,8%,5%,0.05);
     text-align: left;
 
     position: sticky;
     margin-bottom: 8px;
     padding-top: 24px;
-    max-height: calc(100vh - 56px);
 }

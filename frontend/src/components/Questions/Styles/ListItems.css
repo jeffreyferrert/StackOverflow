@@ -1,111 +1,111 @@
 .lis-main-container {
-    width: 100%;
-    max-width: 727px;
-    padding: 24px;
+  width: 100%;
+  max-width: 727px;
+  padding: 24px;
 }
 
 .lis-headline {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
-.lis-headline>p {
-    font-size: 27px;
-    margin: 0px;
+.lis-headline > p {
+  font-size: 27px;
+  margin: 0px;
 }
 
-.lis-headline>button {
-    color: white;
-    font-size: 13px;
-    background-color: hsla(206, 100%, 52%, 1);
-    padding: 10px; /* Updated font size */
-    border: 1px solid transparent;
-    border-radius: 7px;
-    align-self: center;
-    cursor: pointer;
-    white-space: nowrap;
-    text-decoration: none;
+.lis-headline > button {
+  color: white;
+  font-size: 13px;
+  background-color: hsla(206, 100%, 52%, 1);
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  align-self: center;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
 }
 
-.lis-headline>button:hover {
-    background-color: hsla(206, 100%, 40%, 1);
+.lis-headline > button:hover {
+  background-color: hsla(206, 100%, 40%, 1);
 }
 
 .lis-headline2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 15px;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 15px;
+  margin-top: 20px;
 }
 
 .lis-headline2-a {
-    font-size: 17px;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    align-items: baseline;
-    margin-right: 12px;
-    white-space: nowrap;
-    color: #232629;
+  font-size: 17px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  align-items: baseline;
+  margin-right: 12px;
+  white-space: nowrap;
+  color: #232629;
 }
 
 .lis-headline2-b {
-    display: flex;
-    font-size: 12px;
+  display: flex;
+  font-size: 12px;
 }
 
 .lis-h-b1 {
-    border-radius: 6px 0 0 6px;
+  border-radius: 6px 0 0 6px;
 }
 
 .lis-h-b2 {
-    border-radius: 0 6px 6px 0;
+  border-radius: 0 6px 6px 0;
 }
 
-.lis-headline2-b>ul {
-    display: flex;
-    list-style: none;
-    margin-bottom: 0;
-    margin-top: 0;
-    margin-right: 15px;
+.lis-headline2-b > ul {
+  display: flex;
+  list-style: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-right: 15px;
 }
 
-.lis-headline2-b>ul>li {
-    color: hsl(210, 8%, 25%);
-    background-color: white;
-    padding: 9.6px;
-    border: 1px solid hsl(210, 8%, 75%);
-    align-self: center;
-    cursor: pointer;
-    white-space: nowrap;
-    text-decoration: none;
+.lis-headline2-b > ul > li {
+  color: hsl(210, 8%, 25%);
+  background-color: white;
+  padding: 9.6px;
+  border: 1px solid hsl(210, 8%, 75%);
+  align-self: center;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
 }
 
-.lis-headline2-b>ul>li:hover {
-    background-color: hsl(210, 8%, 90%);
+.lis-headline2-b > ul > li:hover {
+  background-color: hsl(210, 8%, 90%);
 }
 
-.lis-headline2-b>button {
-    color: hsl(205, 47%, 42%);
-    background-color: hsl(205, 46%, 92%);
-    border: 1px solid transparent;
-    border-radius: 6px;
-    padding: 9.6px;
-    align-self: center;
-    cursor: pointer;
-    white-space: nowrap;
-    text-decoration: none;
-    font-size: 13px;
+.lis-headline2-b > button {
+  color: hsl(205, 47%, 42%);
+  background-color: hsl(205, 46%, 92%);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 9.6px;
+  align-self: center;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  font-size: 13px;
 }
 
-.lis-headline2-b>button:hover {
-    background-color: hsl(205, 57%, 81%);
-    color: hsl(205, 46%, 32%);
+.lis-headline2-b > button:hover {
+  background-color: hsl(205, 57%, 81%);
+  color: hsl(205, 46%, 32%);
 }
 
 hr {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
