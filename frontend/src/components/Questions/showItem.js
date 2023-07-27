@@ -8,12 +8,18 @@ import {
   getQuestion,
 } from "../../store/questions";
 import { useEffect } from "react";
-import LeftSideBar from "./leftSideBar";
-import RigthSideBar from "./rightSideBar";
+import LeftSideBar from "../SideBars/leftSideBar";
+import RightSideBar from "../SideBars/rightSideBar";
 import { useHistory } from "react-router-dom";
+import AnswersList from "../Answers";
 
 function ShowItem() {
   const sessionUser = useSelector((state) => state.session.user);
+  const questionId = useParams().questionId;
+  const dispatch = useDispatch();
+  const question = useSelector(getQuestion(questionId));
+  const history = useHistory();
+
   let addCommentsConditional;
   if (sessionUser) {
     addCommentsConditional = (
@@ -31,11 +37,6 @@ function ShowItem() {
     );
   }
 
-  const questionId = useParams().questionId;
-  const dispatch = useDispatch();
-  const question = useSelector(getQuestion(questionId));
-  const history = useHistory();
-
   useEffect(() => {
     dispatch(fetchQuestion(questionId));
   }, [questionId]);
@@ -43,6 +44,14 @@ function ShowItem() {
   const handleDelete = () => {
     dispatch(deleteQuestion(questionId));
     history.push("/questions");
+  };
+
+  const handleQuestionAsk = () => {
+    if (sessionUser) {
+      history.push("/questions/ask");
+    } else {
+      history.push("/login");
+    }
   };
 
   const formatDate = (dateString) => {
@@ -62,9 +71,7 @@ function ShowItem() {
           <div className="sq-headline">
             <div className="sq-headline-top">
               <p>{question.title}</p>
-              <Link to="/questions/ask">
-                <button>Ask Question</button>
-              </Link>{" "}
+              <button onClick={handleQuestionAsk}>Ask Question</button>
             </div>
 
             <div className="sq-headline-bottom">
@@ -123,7 +130,7 @@ function ShowItem() {
                     <div className="sq-actions">
                       <span>Share</span>
                       <span>Follow</span>
-                      {sessionUser && (
+                      {sessionUser && sessionUser.id === question.userId && (
                         <>
                           <Link to={`/questions/${questionId}/edit`}>
                             <span>Edit</span>
@@ -171,6 +178,7 @@ function ShowItem() {
                     </li>
                   </ul>
                 </div>
+                <AnswersList />
                 <div className="sq-answer">
                   <p>Your Answer</p>
 
@@ -181,7 +189,7 @@ function ShowItem() {
               </div>
             </div>
 
-            <RigthSideBar />
+            <RightSideBar />
           </div>
         </div>
       )}

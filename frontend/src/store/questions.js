@@ -98,7 +98,7 @@ const questionsReducer = (state = {}, action) => {
 
     switch(action.type) {
         case RECEIVE_QUESTION:
-            newState = { ...newState, [action.question.id]: action.question}
+            newState = { ...newState, ...action.question.question}
             return newState
         case RECEIVE_QUESTIONS:
             newState = { ...newState, ...action.questions}

@@ -1,4 +1,4 @@
-import "./Styles/LeftSideBar.css";
+import "./LeftSideBar.css";
 
 function LeftSideBar() {
   return (

@@ -105,6 +105,8 @@
   margin: 15px 0;
 }
 
+
+
 .sq-votecell > button:hover {
   background-color: #fce3cf;
 }
@@ -112,6 +114,8 @@
 .sq-votecell > button > i {
   margin: 0;
   padding: 0;
+  width: 14px;
+  height: 14px;
 }
 
 .sq-post-body {

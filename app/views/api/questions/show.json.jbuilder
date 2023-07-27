@@ -1,4 +1,15 @@
-# json.question do
-    json.extract! @question, :id, :user_id, :title, :body, :created_at, :updated_at
-    json.author @question.user.username
-# end
+json.question do
+    json.set! @question.id do
+        json.extract! @question, :id, :user_id, :title, :body, :created_at, :updated_at
+        json.answer_ids @question.answers.to_a.map{ |answer| answer.id }
+        json.author @question.user.username
+    end
+end
+json.answers do
+    @question.answers.each do |answer|
+        json.set! answer.id do
+            json.extract! answer, :id, :body, :user_id, :question_id, :created_at, :updated_at
+        end
+    end
+end
+

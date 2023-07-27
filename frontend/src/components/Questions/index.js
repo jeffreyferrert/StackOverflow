@@ -1,14 +1,14 @@
 import './Styles/Questions.css'
-import LeftSideBar from "./leftSideBar";
+import LeftSideBar from "../SideBars/leftSideBar";
 import ListItems from './listItems';
-import RigthSideBar from './rightSideBar';
+import RightSideBar from '../SideBars/rightSideBar';
 
 function Questions() {
     return (
         <div className="q-main-container">
             <LeftSideBar />
             <ListItems />
-            <RigthSideBar />
+            <RightSideBar />
         </div>
     );
 };

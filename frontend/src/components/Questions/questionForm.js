@@ -26,7 +26,6 @@ function QuestionForm() {
 
   return (
     <div className="qf-main-container">
-      {console.log(questionId)}
       <div className="qf-notice">
         <h1>Ask a public question</h1>
         <div className="qf-message">

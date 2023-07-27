@@ -89,7 +89,7 @@ function EditItem() {
         </div>
 
         <button type="submit" className="qfe-review">
-          Post your question
+          Post your changes
         </button>
       </form>
 

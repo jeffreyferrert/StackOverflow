@@ -1,0 +1,89 @@
+.ansi-main-container {
+  display: flex;
+  justify-content: center;
+  /* background-color: #fffff; */
+}
+
+.ansi-post-left-container-top {
+  display: flex;
+}
+
+.ansi-votecell {
+  width: 41px;
+  padding-right: 16px;
+  padding: 0 16px 0 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: hsl(210, 8%, 25%);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.ansi-votecell > button {
+  padding: 10.4px;
+  margin: 2px;
+  border: 1px solid hsl(210, 8%, 85%);
+  cursor: pointer;
+  align-self: center;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 1000px;
+  margin: 15px 0;
+}
+
+.ansi-votecell > button:hover {
+  background-color: #fce3cf;
+}
+
+.ansi-post-body {
+  padding: 0 16px 0 0;
+}
+
+.ansi-post {
+}
+
+.ansi-post > p {
+  margin-bottom: 16px;
+  clear: both;
+  font: inherit;
+  text-align: left;
+  color: hsl(210, 8%, 15%);
+  line-height: 1.5;
+}
+
+.ansi-post-menu {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 16px 0;
+  padding: 4px 0 0 0;
+}
+
+.ansi-post-menu button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.ansi-owner {
+  padding: 5px 6px 7px 7px;
+  color: hsl(210, 8%, 45%);
+  text-align: left;
+  font-size: 12px;
+  background-color: hsl(205, 46%, 92%);
+  width: 200px;
+}
+
+.ansi-c-photo {
+  height: 32px;
+  width: 32px;
+  margin-right: 8px;
+}
+
+.ansi-sub-owner {
+  font-size: 14px;
+  display: flex;
+}

@@ -1,0 +1,143 @@
+.rsb-main-container {
+  width: 300px;
+  margin-bottom: 15px;
+  /* background: gray; */
+}
+
+.rsb-box1 {
+  background-color: hsl(47, 83%, 91%);
+  border: 1px solid hsl(47, 65%, 84%);
+  border-radius: 6px;
+  margin: 0;
+  margin-top: 24px;
+  height: 80px;
+  justify-content: center;
+}
+
+.rsb-box1 p {
+  padding: 12px 15px;
+  background-color: hsl(47, 65%, 84%);
+  font-weight: bold;
+  /* background-color: hsl(210,8%,97.5%); */
+  color: hsl(210, 8%, 35%);
+  margin: 0;
+}
+
+.rsb-box1 a {
+  display: flex;
+  padding: 10px;
+
+  justify-content: center;
+  font-size: 14px;}
+
+.rsb-box2 {
+  background-color: hsl(47, 83%, 91%);
+  border: 1px solid hsl(47, 65%, 84%);
+  border-radius: 6px;
+  margin: 0;
+  margin-top: 15px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rsb-box2 img {
+  align-self: center;
+  margin: 10px 0 0 0;
+}
+.rsb-box2 p {
+  padding: 12px 15px;
+  background-color: hsl(47, 65%, 84%);
+  font-weight: bold;
+  /* background-color: hsl(210,8%,97.5%); */
+  color: hsl(210, 8%, 35%);
+  margin: 0;
+}
+
+.rsb-box2 span {
+  display: flex;
+  padding: 10px;
+
+  justify-content: center;
+  font-size: 13px;
+}
+
+.rsb-box2 button {
+    color: white;
+    font-size: 13px;
+    background-color: hsla(206, 100%, 52%, 1);
+    padding: 8px 10px 8px 10px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+
+    align-self: center;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+    width: 50%;
+}
+
+.rsb-box2 button:hover {
+    background-color: #0074CC;
+
+}
+
+.rsb-box3 {
+  background-color: hsl(47, 83%, 91%);
+  border: 1px solid hsl(47, 65%, 84%);
+  border-radius: 6px;
+  margin: 0;
+  margin-top: 15px;
+  height: 80px;
+  justify-content: center;
+}
+
+.rsb-box3 p {
+  padding: 12px 15px;
+  background-color: hsl(47, 65%, 84%);
+  font-weight: bold;
+  /* background-color: hsl(210,8%,97.5%); */
+  color: hsl(210, 8%, 35%);
+  margin: 0;
+}
+
+.rsb-box3 span {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  font-size: 13px;
+  /* align-items: center; */
+}
+
+
+
+.rsb-box4 p{
+font-size: 18px;
+}
+
+.rsb-box4 ul {
+    display: flex;
+    /* flex-direction: column; */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rsb-box4 li {
+    color: hsl(205, 47%, 42%);
+    background-color: hsl(205, 46%, 92%);
+    font-size: 12.5px;
+    padding: 4px 6px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin: 0 6px 0 0;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.rsb-box4 li:hover {
+    color: hsl(206, 100%, 52%);
+
+}
+
+
