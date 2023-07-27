@@ -19,6 +19,21 @@ class Api::QuestionsController < ApplicationController
         end
     end
 
+    def update
+        @question = Question.find_by(id: params[:id])
+    
+        if @question.update(question_params)
+          render json: @question
+        else
+          render json: { errors: @question.errors.full_messages }, status: 422
+        end
+      end
+
+    def destroy
+        @question = Question.find_by(id: params[:id])
+        @question.delete
+    end
+
     private
     def question_params
         params.require(:question).permit(:title, :body, :user_id)

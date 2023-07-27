@@ -64,10 +64,16 @@ export const createQuestion = (question) => async (dispatch) => {
 }
 
 export const updateQuestion = (question) => async (dispatch) => {
-    const response = await csrfFetch(`/api/questions/${question.id}`, {
+  const { id, title, body, user_id } = question;
+
+    const response = await csrfFetch(`/api/questions/${id}`, {
         method: 'PATCH',
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(question)
+        body: JSON.stringify({
+            title,
+            body,
+            user_id
+        })
     })
     const data = await response.json();
 

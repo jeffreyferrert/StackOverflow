@@ -2,14 +2,18 @@ import "./Styles/ShowItem.css";
 import photo from "../assets/stackoverflow_icon.png";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom/cjs/react-router-dom.min";
-import { fetchQuestion, getQuestion } from "../../store/questions";
+import {
+  deleteQuestion,
+  fetchQuestion,
+  getQuestion,
+} from "../../store/questions";
 import { useEffect } from "react";
 import LeftSideBar from "./leftSideBar";
 import RigthSideBar from "./rightSideBar";
+import { useHistory } from "react-router-dom";
 
 function ShowItem() {
   const sessionUser = useSelector((state) => state.session.user);
-
   let addCommentsConditional;
   if (sessionUser) {
     addCommentsConditional = (
@@ -30,10 +34,16 @@ function ShowItem() {
   const questionId = useParams().questionId;
   const dispatch = useDispatch();
   const question = useSelector(getQuestion(questionId));
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(fetchQuestion(questionId));
   }, [questionId]);
+
+  const handleDelete = () => {
+    dispatch(deleteQuestion(questionId));
+    history.push("/questions");
+  };
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -115,8 +125,12 @@ function ShowItem() {
                       <span>Follow</span>
                       {sessionUser && (
                         <>
-                          <span>Edit</span>
-                          <span>Delete</span>
+                          <Link to={`/questions/${questionId}/edit`}>
+                            <span>Edit</span>
+                          </Link>
+                          <button onClick={handleDelete}>
+                            <span>Delete</span>
+                          </button>
                         </>
                       )}
                     </div>

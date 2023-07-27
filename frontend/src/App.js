@@ -8,6 +8,7 @@ import Questions from "./components/Questions";
 import About from "./components/About";
 import ShowItem from "./components/Questions/showItem";
 import QuestionForm from "./components/Questions/questionForm";
+import EditItem from "./components/Questions/editItem";
 
 function App() {
   return (
@@ -29,8 +30,11 @@ function App() {
         <Route exact path="/questions/ask">
           <QuestionForm />
         </Route>
-        <Route path="/questions/:questionId">
+        <Route exact path="/questions/:questionId">
           <ShowItem />
+        </Route>
+        <Route path="/questions/:questionId/edit">
+          <EditItem />
         </Route>
         <Route path="/about">
           <About />

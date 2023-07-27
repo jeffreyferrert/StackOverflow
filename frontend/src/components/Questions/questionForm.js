@@ -4,6 +4,7 @@ import "./Styles/QuestionForm.css";
 import { useState } from "react";
 import { createQuestion } from "../../store/questions";
 import { useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 function QuestionForm() {
   const dispatch = useDispatch();
@@ -11,6 +12,7 @@ function QuestionForm() {
   const history = useHistory();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+  const questionId = useParams.questionId;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,6 +26,7 @@ function QuestionForm() {
 
   return (
     <div className="qf-main-container">
+      {console.log(questionId)}
       <div className="qf-notice">
         <h1>Ask a public question</h1>
         <div className="qf-message">
