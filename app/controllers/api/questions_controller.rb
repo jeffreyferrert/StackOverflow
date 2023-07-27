@@ -1,6 +1,6 @@
 class Api::QuestionsController < ApplicationController
     def index
-        @questions = Question.all
+        @questions = Question.all.includes(:user)
         render :index
     end
 
@@ -21,6 +21,6 @@ class Api::QuestionsController < ApplicationController
 
     private
     def question_params
-        params.require(:question).permit(:title, :body)
+        params.require(:question).permit(:title, :body, :user_id)
     end
 end

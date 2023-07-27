@@ -7,6 +7,7 @@ import Landing from "./components/LandingPage";
 import Questions from "./components/Questions";
 import About from "./components/About";
 import ShowItem from "./components/Questions/showItem";
+import QuestionForm from "./components/Questions/questionForm";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
         </Route>
         <Route exact path="/questions">
           <Questions />
+        </Route>
+        <Route exact path="/questions/ask">
+          <QuestionForm />
         </Route>
         <Route path="/questions/:questionId">
           <ShowItem />

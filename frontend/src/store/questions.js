@@ -1,3 +1,5 @@
+import csrfFetch from "./csrf.js";
+
 export const RECEIVE_QUESTIONS = 'questions/RECEIVE_QUESTIONS'
 export const RECEIVE_QUESTION = 'questions/RECEIVE_QUESTION'
 export const REMOVE_QUESTION = 'questions/REMOVE_QUESTION'
@@ -23,7 +25,6 @@ export const getQuestion = (questionId) => {
 export const fetchQuestions = () => async (dispatch) => {
     const response = await fetch('/api/questions')
     const data = await response.json();
-
     dispatch({
         type: RECEIVE_QUESTIONS,
         questions: data
@@ -41,10 +42,16 @@ export const fetchQuestion = (questionId) => async (dispatch) => {
 }
 
 export const createQuestion = (question) => async (dispatch) => {
-    const response = await fetch('/api/questions', {
+  const { title, body, user_id } = question;
+
+    const response = await csrfFetch('/api/questions', {
         method: 'POST',
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(question)
+        body: JSON.stringify({
+            title,
+            body,
+            user_id
+        })
     })
     const data = await response.json();
 
@@ -52,10 +59,12 @@ export const createQuestion = (question) => async (dispatch) => {
         type: RECEIVE_QUESTION,
         question: data
     })
+
+    return data;
 }
 
 export const updateQuestion = (question) => async (dispatch) => {
-    const response = await fetch(`/api/questions/${question.id}`, {
+    const response = await csrfFetch(`/api/questions/${question.id}`, {
         method: 'PATCH',
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(question)
@@ -69,7 +78,7 @@ export const updateQuestion = (question) => async (dispatch) => {
 }
 
 export const deleteQuestion = (questionId) => async (dispatch) => {
-    const response = await fetch(`/api/questions/${questionId}`, {
+    const response = await csrfFetch(`/api/questions/${questionId}`, {
         method: 'DELETE'
     })
     dispatch({

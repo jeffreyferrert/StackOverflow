@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/jeffreyferrert/Stackunderflow/issues"
   },
-  "homepage": "https://github.com/jeffreyferrert/Stackunderflow#readme"
+  "homepage": "https://github.com/jeffreyferrert/Stackunderflow#readme",
+  "dependencies": {
+    "react-router-dom": "^6.14.2"
+  }
 }

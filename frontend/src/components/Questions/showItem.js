@@ -1,7 +1,7 @@
 import "./Styles/ShowItem.css";
 import photo from "../assets/stackoverflow_icon.png";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { Link, useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { fetchQuestion, getQuestion } from "../../store/questions";
 import { useEffect } from "react";
 import LeftSideBar from "./leftSideBar";
@@ -14,13 +14,15 @@ function ShowItem() {
   if (sessionUser) {
     addCommentsConditional = (
       <>
-        <span>Add a comment USER #</span>
+        <span>Add a comment {sessionUser.username}</span>
       </>
     );
   } else {
     addCommentsConditional = (
       <>
-        <span>Add a comment EXTRANGER</span>
+        <Link to="/login">
+          <span>Add a comment</span>
+        </Link>
       </>
     );
   }
@@ -50,7 +52,9 @@ function ShowItem() {
           <div className="sq-headline">
             <div className="sq-headline-top">
               <p>{question.title}</p>
-              <button>Ask Question</button>
+              <Link to="/questions/ask">
+                <button>Ask Question</button>
+              </Link>{" "}
             </div>
 
             <div className="sq-headline-bottom">
@@ -73,60 +77,65 @@ function ShowItem() {
 
           <div className="sq-post-layout">
             <div className="sq-post-left-container">
-            <div className="sq-post-left-container-top">
-
-              <div className="sq-votecell">
-                <button className="">
-                  <i
-                    class="fa-solid fa-caret-up"
-                    size="lg"
-                    style={{ color: "#74777b" }}
-                  />
-                </button>
-                0
-                <button className="">
-                  <i
-                    class="fa-solid fa-caret-down"
-                    size="lg"
-                    style={{ color: "#74777b" }}
-                  />
-                </button>
-              </div>
-
-              <div className="sq-post-body">
-                <div className="sq-post">
-                  <p>{question.body}</p>
+              <div className="sq-post-left-container-top">
+                <div className="sq-votecell">
+                  <button className="">
+                    <i
+                      class="fa-solid fa-caret-up"
+                      size="lg"
+                      style={{ color: "#74777b" }}
+                    />
+                  </button>
+                  0
+                  <button className="">
+                    <i
+                      class="fa-solid fa-caret-down"
+                      size="lg"
+                      style={{ color: "#74777b" }}
+                    />
+                  </button>
                 </div>
-                <div className="sq-post-taglist">
-                  <ul>
-                    <li>c#</li>
-                    <li>sql</li>
-                    <li>asp.net-mvc</li>
-                    <li>enity-framework</li>
-                    <li>sql-update</li>
-                  </ul>
-                </div>
-                <div className="sq-post-menu">
-                  <div className="sq-actions">
-                    <span>Share</span>
-                    <span>Follow</span>
+
+                <div className="sq-post-body">
+                  <div className="sq-post">
+                    <p>{question.body}</p>
                   </div>
+                  <div className="sq-post-taglist">
+                    <ul>
+                      <li>c#</li>
+                      <li>sql</li>
+                      <li>asp.net-mvc</li>
+                      <li>enity-framework</li>
+                      <li>sql-update</li>
+                    </ul>
+                  </div>
+                  <div className="sq-post-menu">
+                    <div className="sq-actions">
+                      <span>Share</span>
+                      <span>Follow</span>
+                      {sessionUser && (
+                        <>
+                          <span>Edit</span>
+                          <span>Delete</span>
+                        </>
+                      )}
+                    </div>
 
-                  <div className="sq-owner">
-                    <span>Asked</span>
-                    {formatDate(question.createdAt)}
-                    <div className="sq-sub-owner">
-                      <img
-                        src={photo}
-                        alt="user_photo"
-                        className="sq-c-photo"
-                      />
-                      <a href="#.com">j.ferrertorres</a>
+                    <div className="sq-owner">
+                      <span>Asked</span>
+                      {formatDate(question.createdAt)}
+                      <div className="sq-sub-owner">
+                        <img
+                          src={photo}
+                          alt="user_photo"
+                          className="sq-c-photo"
+                        />
+                        <a href="#">{question.author}</a>
+                      </div>
                     </div>
                   </div>
+                  <div className="sq-add-comment">{addCommentsConditional}</div>
                 </div>
-                <div className="sq-add-comment">{addCommentsConditional}</div>
-              </div>
               </div>
 
               <div className="sq-post-left-container-bottom">

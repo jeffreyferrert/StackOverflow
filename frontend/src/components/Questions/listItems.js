@@ -3,6 +3,7 @@ import ListItem from "./listItem";
 import "./Styles/ListItems.css";
 import { fetchQuestions, getQuestions } from "../../store/questions";
 import { useEffect } from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function ListItems() {
   const dispatch = useDispatch();
@@ -17,7 +18,9 @@ function ListItems() {
       <div className="lis-header-container">
         <div className="lis-headline">
           <p>All Questions</p>
-          <button>Ask Question</button>
+          <Link to ="/questions/ask">
+          <button >Ask Question</button>
+          </Link>
         </div>
 
         <div className="lis-headline2">

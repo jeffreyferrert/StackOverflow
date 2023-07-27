@@ -39,7 +39,7 @@ function ListItem({ question }) {
 
           <div className="li-c-user">
             <img src={photo} alt="user_photo" className="li-c-photo" />
-            <div className="li-c-username"></div>
+            <div className="li-c-username">{question.author}</div>
             <span />
             <div className="li-c-lastmodified">
               {"answered " + formatDate(question.createdAt)}

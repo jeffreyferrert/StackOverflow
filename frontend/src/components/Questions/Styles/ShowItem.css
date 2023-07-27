@@ -28,7 +28,7 @@
   margin: 0;
 }
 
-.sq-headline-top > button {
+.sq-headline-top button {
   color: white;
   font-size: 13px;
   background-color: hsla(206, 100%, 52%, 1);
@@ -41,7 +41,7 @@
   text-decoration: none;
 }
 
-.sq-headline-top > button:hover {
+.sq-headline-top button:hover {
   background-color: hsla(206, 100%, 40%, 1);
 }
 
