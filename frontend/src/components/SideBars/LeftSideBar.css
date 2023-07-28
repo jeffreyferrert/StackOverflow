@@ -1,11 +1,48 @@
 .lsb-main-container {
-    width: 164px;
-    background-color: gray;
-    flex-shrink: 0;
-    box-shadow: 0 0 0 hsla(210,8%,5%,0.05);
-    text-align: left;
+  width: 164px;
+  text-align: left;
+  border-right: 0.5px solid hsl(210, 8%, 85%);
+  margin-bottom: 8px;
+  padding-top: 24px;
+  text-align: left;
+}
 
-    position: sticky;
-    margin-bottom: 8px;
-    padding-top: 24px;
+p {
+  color: hsl(210, 8%, 35%);
+  margin: 16px 0 4px 8px;
+  font-size: 11px;
+}
+
+.link > p {
+  /* padding: 4px 4px 4px 0px; */
+  color: hsl(210, 8%, 35%);
+  line-height: 2;
+  font-size: 13px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 4px 0 4px 30px;
+  margin: 0;
+}
+
+li {
+  color: hsl(210, 8%, 35%);
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 2;
+  padding: 4px 0;
+  
+}
+
+.select-option {
+  font-weight: bold;
+  background-color: hsl(210, 8%, 95%);
+  color: hsl(210, 8%, 5%);
+  border-right: 3px solid hsl(27, 90%, 55%);
+  margin-left: -40px;
+  padding-left: 40px;
+
 }

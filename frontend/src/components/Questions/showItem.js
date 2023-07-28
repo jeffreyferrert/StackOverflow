@@ -90,7 +90,7 @@ function ShowItem() {
               </ul>
             </div>
           </div>
-          <hr />
+          {/* <hr /> */}
 
           <div className="sq-post-layout">
             <div className="sq-post-left-container">

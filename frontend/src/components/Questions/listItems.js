@@ -57,7 +57,7 @@ function ListItems() {
             </button>
           </div>
         </div>
-        <hr />
+        {/* <hr /> */}
       </div>
 
       {questions &&

@@ -1,20 +1,28 @@
+import { Link } from "react-router-dom";
 import "./LeftSideBar.css";
 
 function LeftSideBar() {
   return (
     <div className="lsb-main-container">
-      <h3>Home</h3>
-      <h3>Public</h3>
+      <Link to="/" className="link">
+        <p>Home</p>
+      </Link>
+      <p>PUBLIC</p>
 
       <ul className="">
+        <li className="select-option">Questions</li>
         <li>Tags</li>
         <li>Users</li>
         <li>Companies</li>
       </ul>
 
-      <h3>Collectives</h3>
-      <h3>Explore Collectives</h3>
-      <h3>Teams</h3>
+      <p>COLLECTIBLES</p>
+      <Link to="/teams" className="link">
+        <p>Explore Collectives</p>
+      </Link>
+      <Link to="/teams" className="link">
+        <p>TEAMS</p>
+      </Link>
     </div>
   );
 }

@@ -14,6 +14,8 @@
 /* Headline */
 .sq-headline {
   width: 1051px;
+  border-bottom: 0.5px solid hsl(210, 8%, 85%);;
+
 }
 
 .sq-headline-top {
@@ -161,7 +163,7 @@
   color: hsl(205, 47%, 42%);
   background-color: hsl(205, 46%, 92%);
   font-size: 12.5px;
-  padding: 4px 6px;
+  padding: 0px 6px;
   border: 1px solid transparent;
   border-radius: 4px;
   margin: 0 6px 0 0;

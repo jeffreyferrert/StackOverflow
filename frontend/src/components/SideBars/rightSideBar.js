@@ -28,7 +28,9 @@ function RigthSideBar() {
           <li>Git</li>
           <li>Python</li>
           <li>Java</li>
+          <li>React</li>
           <li>C#</li>
+          <li>Swift</li>
         </ul>
       </div>
     </div>
