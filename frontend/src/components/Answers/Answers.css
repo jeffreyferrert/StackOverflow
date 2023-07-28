@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   /* background-color: #fffff; */
+
 }
 
 .ansi-post-left-container-top {
@@ -38,9 +39,11 @@
 
 .ansi-post-body {
   padding: 0 16px 0 0;
+
 }
 
 .ansi-post {
+
 }
 
 .ansi-post > p {

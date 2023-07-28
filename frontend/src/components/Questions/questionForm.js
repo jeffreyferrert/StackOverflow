@@ -12,7 +12,7 @@ function QuestionForm() {
   const history = useHistory();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const questionId = useParams.questionId;
+  const questionId = useParams().questionId;
 
   const handleSubmit = (e) => {
     e.preventDefault();

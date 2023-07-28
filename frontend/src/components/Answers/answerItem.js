@@ -2,29 +2,17 @@ import photo from "../assets/stackoverflow_icon.png";
 import "./AnswerItem.css";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom/cjs/react-router-dom.min";
-import {
-  deleteQuestion,
-  fetchQuestion,
-  getQuestion,
-} from "../../store/questions";
+
 import { useHistory } from "react-router-dom";
 import { useEffect } from "react";
+import { deleteAnswer } from "../../store/answers";
 
-function AnswerItem() {
+function AnswerItem({ answer }) {
   const sessionUser = useSelector((state) => state.session.user);
-  const questionId = useParams().questionId;
   const dispatch = useDispatch();
-  const question = useSelector(getQuestion(questionId));
   const history = useHistory();
 
-  useEffect(() => {
-    // dispatch(fetchQuestion(questionId));
-  }, [questionId]);
-
-  const handleDelete = () => {
-    // dispatch(deleteQuestion(questionId));
-    history.push("/questions");
-  };
+  useEffect(() => {}, []);
 
   const handleQuestionAsk = () => {
     if (sessionUser) {
@@ -32,6 +20,10 @@ function AnswerItem() {
     } else {
       history.push("/login");
     }
+  };
+
+  const handleDelete = () => {
+    dispatch(deleteAnswer(answer.id));
   };
 
   const formatDate = (dateString) => {
@@ -54,7 +46,7 @@ function AnswerItem() {
               style={{ color: "#74777b" }}
             />
           </button>
-          141
+          0
           <button className="">
             <i
               className="fa-solid fa-caret-down"
@@ -66,16 +58,16 @@ function AnswerItem() {
 
         <div className="ansi-post-body">
           <div className="ansi-post">
-            <p>{question.body}</p>
+            <p>{answer.body}</p>
           </div>
 
           <div className="ansi-post-menu">
             <div className="ansi-actions">
-              {sessionUser && sessionUser.id === question.userId && (
+              {sessionUser && sessionUser.id === answer.userId && (
                 <>
-                  <Link to={`/questions/${questionId}/edit`}>
-                    <span>Edit</span>
-                  </Link>
+                  {/* edit directly there */}
+                  <span>Edit</span>
+
                   <button onClick={handleDelete}>
                     <span>Delete</span>
                   </button>
@@ -85,14 +77,13 @@ function AnswerItem() {
 
             <div className="ansi-owner">
               <span>Asked</span>
-              {formatDate(question.createdAt)}
+              {formatDate(answer.createdAt)}
               <div className="ansi-sub-owner">
                 <img src={photo} alt="user_photo" className="ansi-c-photo" />
-                <a href="#">{question.author}</a>
+                <a href="#">{answer.author}</a>
               </div>
             </div>
           </div>
-          <hr />
         </div>
       </div>
     </div>

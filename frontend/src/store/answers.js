@@ -43,12 +43,16 @@ export const fetchAnswer = (answerId) => async (dispatch) => {
 };
 
 export const createAnswer = (answer) => async (dispatch) => {
-  const { body } = answer;
+  const { body, user_id, question_id } = answer;
 
   const response = await csrfFetch("/api/answers", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ body }),
+    body: JSON.stringify({ 
+      body,
+      user_id,
+      question_id
+     }),
   });
   const data = await response.json();
 

@@ -160,6 +160,8 @@ function ShowItem() {
               </div>
 
               <div className="sq-post-left-container-bottom">
+              <AnswersList />
+
                 <div className="sq-relatedq">
                   <p>Related questions</p>
 
@@ -178,14 +180,7 @@ function ShowItem() {
                     </li>
                   </ul>
                 </div>
-                <AnswersList />
-                <div className="sq-answer">
-                  <p>Your Answer</p>
-
-                  <div className="sq-answer-box">
-                    <textarea></textarea>
-                  </div>
-                </div>
+                {/* PUT A CONDITIONAL IF NO ANSWERS THEN  SHOW RELATED QUESTIONS*/}
               </div>
             </div>
 
