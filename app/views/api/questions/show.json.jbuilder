@@ -3,6 +3,7 @@ json.question do
         json.extract! @question, :id, :user_id, :title, :body, :created_at, :updated_at
         json.answer_ids @question.answers.to_a.map{ |answer| answer.id }
         json.author @question.user.username
+        json.vote_count @question.votes.length
     end
 end
 json.answers do
@@ -12,4 +13,3 @@ json.answers do
         end
     end
 end
-

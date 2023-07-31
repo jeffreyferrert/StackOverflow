@@ -1,35 +1,43 @@
-import "./Answers.css";
-import AnswerItem from "./answerItem";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useHistory, useParams } from "react-router-dom";
 import { createAnswer, fetchAnswers, getAnswers } from "../../store/answers";
-import { useEffect } from "react";
+import AnswerItem from "./answerItem";
+import "./Answers.css";
 
-function AnswersList() {
+function AnswersList({question}) {
   const sessionUser = useSelector((state) => state.session.user);
   const { questionId } = useParams();
-
+  const history = useHistory();
   const dispatch = useDispatch();
-  const [body, setBody] = useState("");
-
   const answers = useSelector(getAnswers);
+  const [body, setBody] = useState("");
+  // const numQuest = question.answerIds.length;
 
   useEffect(() => {
     dispatch(fetchAnswers());
   }, [dispatch]);
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(
-      createAnswer({ body, user_id: sessionUser.id, question_id: questionId })
-    );
+
+    if (sessionUser) {
+      dispatch(
+        createAnswer({ body, user_id: sessionUser.id, question_id: questionId })
+      );
+    } else {
+      history.push("/login");
+    }
+
   };
 
   return (
     <div className="ans-main-container">
-      <h3>{answers.length} Answers</h3>      {/* fix this */}
+      {/* {console.log(question)}
+      {console.log(answers)} */}
+      {/* <h3>{question.answerIds.length} Answers</h3>      fix this */}
+      <h3>0 Answers</h3>      {/* fix this */}
       {answers.map(
         (answer) =>
           answer.questionId === parseInt(questionId) && (

@@ -5,13 +5,14 @@ import { Link, useParams } from "react-router-dom/cjs/react-router-dom.min";
 import {
   deleteQuestion,
   fetchQuestion,
-  getQuestion,
+  getQuestion
 } from "../../store/questions";
 import { useEffect } from "react";
 import LeftSideBar from "../SideBars/leftSideBar";
 import RightSideBar from "../SideBars/rightSideBar";
 import { useHistory } from "react-router-dom";
 import AnswersList from "../Answers";
+import { voteQuestion } from "../../store/votes";
 
 function ShowItem() {
   const sessionUser = useSelector((state) => state.session.user);
@@ -54,6 +55,10 @@ function ShowItem() {
     }
   };
 
+  const handleVoteUp = () => {
+    dispatch(voteQuestion(questionId))
+  }
+
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     const month = date.toLocaleString("en-US", { month: "short" });
@@ -61,6 +66,20 @@ function ShowItem() {
     const hour = date.getHours().toString().padStart(2, "0");
     const minute = date.getMinutes().toString().padStart(2, "0");
     return `${month} ${day} at ${hour}:${minute}`;
+  };
+
+
+  const shortDate = (dateString) => {
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffTime = Math.abs(now - date);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  
+    if (diffDays === 0) {
+      return "today";
+    } else {
+      return `${diffDays} ${diffDays === 1 ? "day" : "days"} ago`;
+    }
   };
 
   return (
@@ -78,11 +97,11 @@ function ShowItem() {
               <ul>
                 <li>
                   <span>Asked</span>
-                  {formatDate(question.createdAt)}
+                  {shortDate(question.createdAt)}
                 </li>
                 <li>
                   <span>Modified</span>
-                  {formatDate(question.updatedAt)}
+                  {shortDate(question.updatedAt)}
                 </li>
                 <li>
                   <span>View</span>5 times
@@ -96,14 +115,14 @@ function ShowItem() {
             <div className="sq-post-left-container">
               <div className="sq-post-left-container-top">
                 <div className="sq-votecell">
-                  <button className="">
+                  <button className="" onClick={handleVoteUp}>
                     <i
                       class="fa-solid fa-caret-up"
                       size="lg"
                       style={{ color: "#74777b" }}
                     />
                   </button>
-                  0
+                  {question.voteCount}
                   <button className="">
                     <i
                       class="fa-solid fa-caret-down"
@@ -143,8 +162,8 @@ function ShowItem() {
                     </div>
 
                     <div className="sq-owner">
-                      <span>Asked</span>
-                      {formatDate(question.createdAt)}
+                    <span>{question.createdAt !== question.updatedAt ? "Modified" : "Asked"}</span>
+              {formatDate(question.updatedAt)}
                       <div className="sq-sub-owner">
                         <img
                           src={photo}
@@ -160,7 +179,7 @@ function ShowItem() {
               </div>
 
               <div className="sq-post-left-container-bottom">
-              <AnswersList />
+              <AnswersList question={question}/>
 
                 <div className="sq-relatedq">
                   <p>Related questions</p>

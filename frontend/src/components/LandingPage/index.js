@@ -152,7 +152,67 @@ function Landing() {
           </div>
         </div>
 
-      
+        <div className="container-p6">
+          <div className="cp6-1">
+            <i
+              class="fa-solid fa-quote-right fa-3x"
+              style={{ color: "#CDE9FE" }}
+            />
+            <p>
+              Stack Overflow for Teams has been a resource for our entire
+              company. Not only for developers to solve problems, it’s also
+              enabled our sales field to answer technical questions that help
+              them close deals.
+            </p>
+            <h5>Director of Product Management</h5>
+            <span>Microsoft</span>
+          </div>
+
+          <div className="cp6-1">
+            <i
+              class="fa-solid fa-quote-right fa-3x"
+              style={{ color: "#CDE9FE" }}
+            />
+            <p>
+              Engineers should help solve the hardest questions, the unknowns,
+              where being familiar with how the product was built is essential.
+              But we don’t want to keep answering solved problems over and over
+              again. That’s where Stack Overflow for Teams really helps.
+            </p>
+            <h5>Director of Engineering</h5>
+            <span>Elastic Cloud</span>
+          </div>
+
+          <div className="cp6-1">
+            <i
+              class="fa-solid fa-quote-right fa-3x"
+              style={{ color: "#CDE9FE" }}
+            />
+            <p>
+              As we started to use [Stack Overflow for Teams] and saw how nice
+              it was to have a repository of information, we started to see it
+              spread to other teams. Our customer support team started using it,
+              our people success team started using it, next thing we knew, we
+              had [Slack] integrations all over the place.
+            </p>
+            <h5>Engineering</h5>
+            <span>Expensify</span>
+          </div>
+
+          <div className="cp6-1">
+            <i
+              class="fa-solid fa-quote-right fa-3x"
+              style={{ color: "#CDE9FE" }}
+            />
+            <p>
+              What we love about Stack Overflow for Teams is that it’s a very
+              dynamic tool…there’s just so many ways to use this as a liaison
+              between different teams and different knowledge bases.
+            </p>
+            <h5>Software Engineer</h5>
+            <span>Box</span>
+          </div>
+        </div>
       </div>
     </div>
   );

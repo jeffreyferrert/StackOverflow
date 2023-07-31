@@ -15,8 +15,8 @@ function ListItem({ question }) {
   return (
     <div className="li-container">
       <div className="li-container-left">
-        <div className="li-c-vote">133 votes</div>
-        <div className="li-c-answer">6 answers</div>
+        <div className="li-c-vote">{question.voteCount} votes</div>
+        <div className="li-c-answer">{question.answerCount} answers</div>
         <div className="li-c-views">206k views</div>
       </div>
 
@@ -42,7 +42,8 @@ function ListItem({ question }) {
             <div className="li-c-username">{question.author}</div>
             <span />
             <div className="li-c-lastmodified">
-              {"answered " + formatDate(question.createdAt)}
+            <span>{question.createdAt !== question.updatedAt ? "Modified" : "Asked"}</span>
+              {formatDate(question.updatedAt)}
             </div>
           </div>
         </div>

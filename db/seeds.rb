@@ -9,6 +9,7 @@
 ApplicationRecord.transaction do 
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
+  Answer.destroy_all
   Question.destroy_all
   User.destroy_all
 
@@ -19,8 +20,8 @@ ApplicationRecord.transaction do
   puts "Creating users..."
   # Create one user with an easy to remember username, email, and password:
   User.create!(
-    username: 'Demo-lition', 
-    email: 'demo@user.io', 
+    username: 'jferrertorres', 
+    email: 'test@gmail.com', 
     password: 'password'
   )
 
@@ -33,11 +34,19 @@ ApplicationRecord.transaction do
     }) 
   end
   
-  10.times do 
+  20.times do 
     Question.create!({
       title: Faker::Hacker.say_something_smart,
       body: Faker::Lorem.paragraph(sentence_count: 20, supplemental: true, random_sentences_to_add: 10),
-      user_id: Faker::Number.between(from: 1, to: 10)
+      user_id: Faker::Number.between(from: 13, to: 23)
+    })
+  end
+
+  40.times do
+    Answer.create!({
+      body: Faker::Hacker.say_something_smart + " " + Faker::Hacker.say_something_smart,
+      user_id: Faker::Number.between(from: 13, to: 23),
+      question_id: Faker::Number.between(from: 54, to: 73)
     })
   end
 

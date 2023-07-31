@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # post 'api/test', to: 'application#test'
   
   namespace :api, defaults: { format: :json } do
+    resources :votes, only: [:create, :destroy]
+    # post '/question/:id/vote', to: 'questions#vote', as: 'vote'
     resources :questions, only: [:index, :create, :show, :destroy, :update]
     resources :answers, only: [:index, :create, :show, :destroy, :update]
     resources :users, only: :create
