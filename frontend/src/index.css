@@ -6,3 +6,9 @@ body {
     /* font-kerning: auto; */
 }
 
+.app-main-container {
+    /* min-height: 100vh;
+
+    display: flex;
+    flex-direction: column; */
+}

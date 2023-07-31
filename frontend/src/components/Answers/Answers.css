@@ -37,6 +37,13 @@
   background-color: #fce3cf;
 }
 
+.ansi-votecell > button > i {
+  margin: 0;
+  padding: 0;
+  width: 14px;
+  height: 14px;
+}
+
 .ansi-post-body {
   padding: 0 16px 0 0;
 
@@ -89,4 +96,30 @@
 .ansi-sub-owner {
   font-size: 14px;
   display: flex;
+}
+
+.ans-body {
+  /* margin-right: 16px; */
+/* padding-right: 16px; */
+/* width: 700px; */
+}
+
+.ans-body > p {
+  font-weight: 500;
+  padding-top: 20px;
+  margin: 0 0 19px 0;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #232629;
+}
+
+.ans-body > textarea {
+  padding: 10px;
+  border: 1px solid hsl(210,8%,75%);
+  height: 180px;
+  line-height: 1.3;
+  width: 650px;
+  font-size: 13px;
+  tab-size: 4;
+  background-color: white;
 }
