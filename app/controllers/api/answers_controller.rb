@@ -1,6 +1,6 @@
 class Api::AnswersController < ApplicationController
     def index
-        @answers = Answer.all
+        @answers = Answer.all.includes(:user)
         render :index
     end
 
@@ -13,7 +13,7 @@ class Api::AnswersController < ApplicationController
         @answer ||= Answer.new(answer_params)
 
         if @answer.save
-            render json: @answer
+            render :show
         else
             render json: { errors: @answer.errors.full_messages }, status: 422
         end
@@ -23,7 +23,7 @@ class Api::AnswersController < ApplicationController
         @answer = Answer.find_by(id: params[:id])
     
         if @answer.update(answer_params)
-          render json: @answer
+          render :show
         else
           render json: { errors: @answer.errors.full_messages }, status: 422
         end

@@ -3,10 +3,7 @@ import "./AnswerItem.css";
 import { useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom/cjs/react-router-dom.min";
 
-import { useHistory } from "react-router-dom";
-import { useEffect } from "react";
 import { deleteAnswer, updateAnswer } from "../../store/answers";
 
 function AnswerItem({ answer }) {
@@ -22,6 +19,7 @@ function AnswerItem({ answer }) {
 
   const handleSaveEdit = () => {
     dispatch(updateAnswer({ id: answer.id, body }));
+    setIsEditing(false);
   };
 
   const handleDelete = () => {

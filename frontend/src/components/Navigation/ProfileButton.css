@@ -1,8 +1,6 @@
 .main-button {
     width: 30px;
     height: 30px;
-    /* z-index: 1;
-    position:relative; */
 }
 
 .profile-dropdown {
@@ -11,5 +9,4 @@
     width: 50px;
     padding: 100px;
     z-index: 1;
-
 }

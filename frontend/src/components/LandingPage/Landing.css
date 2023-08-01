@@ -275,51 +275,49 @@
   display: flex;
   max-width: 1450px;
   padding: 64px 64px 128px 64px;
-margin: 0 auto;
-/* flex-flow: row wrap; */
-justify-content: center;
+  margin: 0 auto;
+  /* flex-flow: row wrap; */
+  justify-content: center;
 }
 
 .cp6-1 {
-width: 282px;
-padding: 24px;
+  width: 282px;
+  padding: 24px;
 }
 
 .cp6-1 i {
-width: 48px;
-height: 48px;
-margin-bottom: -50px;
+  width: 48px;
+  height: 48px;
+  margin-bottom: -50px;
 }
 
 .cp6-1 p {
-margin-bottom: 32px;
-line-height: 22px;
-font-size: 15px;
-color: hsl(210,8%,35%) !important;
-text-align: left;
+  margin-bottom: 32px;
+  line-height: 22px;
+  font-size: 15px;
+  color: hsl(210, 8%, 35%) !important;
+  text-align: left;
 }
 
 
-.cp6-1 br {
-
-}
+.cp6-1 br {}
 
 .cp6-1 h5 {
-padding: 16px 0 0 0;
-margin: 0;
-font-family: 'Source Sans Pro Bold',sans-serif;
-    font-weight: 700;
-    border-top: 1px solid hsl(210,8%,90%);
-    color: hsl(210,8%,25%);
-    font-size: 15px;
-    font-weight: bold;
+  padding: 16px 0 0 0;
+  margin: 0;
+  font-family: 'Source Sans Pro Bold', sans-serif;
+  font-weight: 700;
+  border-top: 1px solid hsl(210, 8%, 90%);
+  color: hsl(210, 8%, 25%);
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .cp6-1 span {
-  font-family: 'Source Sans Pro Bold',sans-serif;
+  font-family: 'Source Sans Pro Bold', sans-serif;
   /* font-weight: 700; */
-  border-top: 1px solid hsl(210,8%,90%);
-  color: hsl(210,8%,25%);
+  border-top: 1px solid hsl(210, 8%, 90%);
+  color: hsl(210, 8%, 25%);
   font-size: 15px;
   /* font-weight: bold; */
   padding: 0;

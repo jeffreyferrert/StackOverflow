@@ -18,7 +18,6 @@ function Navigation() {
   } else {
     sessionLinks = (
       <>
-        {/* <LoginFormModal /> */}
         <NavLink to="/login" className="topbar-login">Log in</NavLink>
 
         <NavLink to="/signup" className="topbar-signup">Sign Up</NavLink>
@@ -29,7 +28,7 @@ function Navigation() {
   return (
     <>
       <div id="topbar-container">
-        
+
         <nav className="topbar-menu">
           <img className="topbar-menu-img" src={menu} alt="" />
         </nav>

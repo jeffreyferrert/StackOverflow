@@ -4,6 +4,19 @@ export const RECEIVE_QUESTIONS = "questions/RECEIVE_QUESTIONS";
 export const RECEIVE_QUESTION = "questions/RECEIVE_QUESTION";
 export const REMOVE_QUESTION = "questions/REMOVE_QUESTION";
 
+export const VOTE_QUESTION_UP = "questions/VOTE_QUESTION_UP";
+export const VOTE_QUESTION_DOWN = "questions/VOTE_QUESTION_DOWN";
+
+
+export const voteQuestionUp = (questionId) => ({
+  type: VOTE_QUESTION_UP,
+  questionId,
+});
+
+export const voteQuestionDown = (questionId) => ({
+  type: VOTE_QUESTION_DOWN,
+  questionId,
+});
 
 export const getQuestions = (state) => {
   if (!state.questions) {
@@ -29,8 +42,7 @@ export const fetchQuestions = () => async (dispatch) => {
 
   dispatch({
     type: RECEIVE_QUESTIONS,
-    questions: data.questions,
-    votes: data.votes
+    questions: data.questions
   });
 };
 
@@ -67,19 +79,15 @@ export const createQuestion = (question) => async (dispatch) => {
 };
 
 export const updateQuestion = (question) => async (dispatch) => {
-  const { id, title, body, user_id } = question;
+  const { id, title, body, user_id, votesCounts } = question;
+const questionObj = {question: {id, title, body,  user_id,  votesCounts}}
 
   const response = await csrfFetch(`/api/questions/${id}`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      title,
-      body,
-      user_id,
-    }),
+    body: JSON.stringify(questionObj),
   });
   const data = await response.json();
-
   dispatch({
     type: RECEIVE_QUESTION,
     question: data,
@@ -109,6 +117,12 @@ const questionsReducer = (state = {}, action) => {
       return newState;
     case REMOVE_QUESTION:
       delete newState[action.questionId];
+      return newState;
+    case VOTE_QUESTION_UP:
+      newState[action.questionId].votesCounts += 1;
+      return newState;
+    case VOTE_QUESTION_DOWN:
+      newState[action.questionId].votesCounts -= 1;
       return newState;
     default:
       return state;

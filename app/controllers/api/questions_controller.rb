@@ -1,13 +1,11 @@
 class Api::QuestionsController < ApplicationController
     def index
         @questions = Question.all.includes(:user, :answers)
-        @votes = Vote.all
         render :index
     end
 
     def show
         @question = Question.find_by(id: params[:id])
-        @votes = Question.find_by(id: params[:id])
         render :show
     end
 
@@ -15,7 +13,7 @@ class Api::QuestionsController < ApplicationController
         @question ||= Question.new(question_params)
 
         if @question.save
-            render json: @question
+            render :show
         else
             render json: { errors: @question.errors.full_messages }, status: 422
         end
@@ -23,9 +21,8 @@ class Api::QuestionsController < ApplicationController
 
     def update
         @question = Question.find_by(id: params[:id])
-    
         if @question.update(question_params)
-          render json: @question
+          render :show
         else
           render json: { errors: @question.errors.full_messages }, status: 422
         end
@@ -38,6 +35,7 @@ class Api::QuestionsController < ApplicationController
 
     private
     def question_params
-        params.require(:question).permit(:title, :body, :user_id)
+        params.require(:question).permit(:id, :title, :body, :user_id, :votes_counts)
     end
+
 end

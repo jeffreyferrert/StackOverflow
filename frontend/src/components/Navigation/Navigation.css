@@ -8,24 +8,13 @@
   margin: auto;
   border-top: 3px;
   border-bottom: 1px;
-  /* background-color: brown; */
   display: flex;
   align-items: center;
   justify-content: center;
   border-top: 3px solid hsla(27, 90%, 55%, 1);
   border-bottom: 1px solid hsla(210, 8%, 85%, 1);
-  /* position: fixed; */
   background-color: #FFFFFF;
 }
-
-/* .topbar-menu {
-
-}
-
-.topbar-menu:hover {
-  background-color: hsla(205, 46%, 92%, 1);
-  
-} */
 
 .topbar-menu-img {
   width: 17px;
@@ -36,20 +25,12 @@
 
 .topbar-logo {
   align-items: center;
-  
 }
-
-/* .topbar-logo:hover {
-  background-color: hsla(210, 8%, 90%, 1);
-  height: 52px;
-  box-sizing: border-box;
-} */
 
 .topbar-logo-img {
   width: 143px;
   height: 28px;
   padding: 0px 8px 0px 8px;
-
 }
 
 .topbar-options {
@@ -69,8 +50,6 @@
   align-items: center;
   cursor: pointer;
   padding: 6px 12px 6px 12px;
-  /* display: flex; */
-  /* position: relative; */
 }
 
 .topbar-options-li > a {
@@ -95,8 +74,8 @@
   padding: 0px 8px 0px 8px;
   height: 32px;
   position: relative;
-  display: flex; /* Add this line */
-  align-items: center; /* Add this line */
+  display: flex; 
+  align-items: center;
 }
 
 .topbar-search {
@@ -106,7 +85,6 @@
   width: 100%;
   border: 1px solid hsla(210, 8%, 75%, 1);
   border-radius: 3px;
-
 }
 
 .topbar-lupa {
@@ -128,7 +106,6 @@
   cursor: pointer;
   white-space: nowrap;
   text-decoration: none;
-
 }
 
 .topbar-login:hover {
@@ -148,7 +125,6 @@
   cursor: pointer;
   white-space: nowrap;
   text-decoration: none;
-
 }
 
 

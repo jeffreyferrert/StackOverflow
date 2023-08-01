@@ -19,7 +19,8 @@ function QuestionForm() {
 
     dispatch(createQuestion({ title, body, user_id: sessionUser.id })).then(
       (createdQuestion) => {
-        history.push(`/questions/${createdQuestion.id}`);
+        const id = Object.values(createdQuestion.question)[0].id
+        history.push(`/questions/${id}`);
       }
     );
   };
@@ -49,7 +50,6 @@ function QuestionForm() {
           </ul>
         </div>
       </div>
-      {/* #####################################3 */}
       <form onSubmit={handleSubmit}>
         <div className="qf-post-title">
           <h4>Title</h4>
@@ -101,7 +101,6 @@ function QuestionForm() {
         </button>
       </form>
 
-      {/* #####################################3 */}
     </div>
   );
 }

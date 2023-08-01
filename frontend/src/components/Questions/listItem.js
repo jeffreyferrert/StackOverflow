@@ -15,7 +15,7 @@ function ListItem({ question }) {
   return (
     <div className="li-container">
       <div className="li-container-left">
-        <div className="li-c-vote">{question.voteCount} votes</div>
+        <div className="li-c-vote">{question.votesCounts} votes</div>
         <div className="li-c-answer">{question.answerCount} answers</div>
         <div className="li-c-views">206k views</div>
       </div>

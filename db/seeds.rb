@@ -38,15 +38,15 @@ ApplicationRecord.transaction do
     Question.create!({
       title: Faker::Hacker.say_something_smart,
       body: Faker::Lorem.paragraph(sentence_count: 20, supplemental: true, random_sentences_to_add: 10),
-      user_id: Faker::Number.between(from: 13, to: 23)
+      user_id: Faker::Number.between(from: User.first.id, to: User.last.id)
     })
   end
 
   40.times do
     Answer.create!({
-      body: Faker::Hacker.say_something_smart + " " + Faker::Hacker.say_something_smart,
-      user_id: Faker::Number.between(from: 13, to: 23),
-      question_id: Faker::Number.between(from: 54, to: 73)
+      body: Faker::Hacker.say_something_smart + " " + Faker::Hacker.say_something_smart + " " + Faker::Hacker.say_something_smart + " " + Faker::Hacker.say_something_smart + " " + Faker::Hacker.say_something_smart,
+      user_id: Faker::Number.between(from: User.first.id, to: User.last.id),
+      question_id: Faker::Number.between(from: Question.first.id, to: Question.last.id)
     })
   end
 

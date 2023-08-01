@@ -5,14 +5,14 @@ import { Link, useParams } from "react-router-dom/cjs/react-router-dom.min";
 import {
   deleteQuestion,
   fetchQuestion,
-  getQuestion
+  getQuestion,
+  updateQuestion,
 } from "../../store/questions";
 import { useEffect } from "react";
 import LeftSideBar from "../SideBars/leftSideBar";
 import RightSideBar from "../SideBars/rightSideBar";
 import { useHistory } from "react-router-dom";
 import AnswersList from "../Answers";
-import { voteQuestion } from "../../store/votes";
 
 function ShowItem() {
   const sessionUser = useSelector((state) => state.session.user);
@@ -55,9 +55,15 @@ function ShowItem() {
     }
   };
 
-  const handleVoteUp = () => {
-    dispatch(voteQuestion(questionId))
-  }
+  const handleVote = (vote) => {
+    let newVoteCount;
+    if (vote === "up") {
+      newVoteCount = question.votesCounts + 1
+    } else {
+      newVoteCount = question.votesCounts - 1
+    }
+    dispatch(updateQuestion({ id: questionId, votesCounts: newVoteCount })); 
+  };
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -68,13 +74,12 @@ function ShowItem() {
     return `${month} ${day} at ${hour}:${minute}`;
   };
 
-
   const shortDate = (dateString) => {
     const date = new Date(dateString);
     const now = new Date();
     const diffTime = Math.abs(now - date);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  
+
     if (diffDays === 0) {
       return "today";
     } else {
@@ -115,15 +120,15 @@ function ShowItem() {
             <div className="sq-post-left-container">
               <div className="sq-post-left-container-top">
                 <div className="sq-votecell">
-                  <button className="" onClick={handleVoteUp}>
+                  <button className="" onClick={() => handleVote("up")}>
                     <i
                       class="fa-solid fa-caret-up"
                       size="lg"
                       style={{ color: "#74777b" }}
                     />
                   </button>
-                  {question.voteCount}
-                  <button className="">
+                  {question.votesCounts}
+                  <button className="" onClick={() => handleVote("down")}>
                     <i
                       class="fa-solid fa-caret-down"
                       size="lg"
@@ -162,8 +167,12 @@ function ShowItem() {
                     </div>
 
                     <div className="sq-owner">
-                    <span>{question.createdAt !== question.updatedAt ? "Modified" : "Asked"}</span>
-              {formatDate(question.updatedAt)}
+                      <span>
+                        {question.createdAt !== question.updatedAt
+                          ? "Modified"
+                          : "Asked"}
+                      </span>
+                      {formatDate(question.updatedAt)}
                       <div className="sq-sub-owner">
                         <img
                           src={photo}
@@ -179,11 +188,10 @@ function ShowItem() {
               </div>
 
               <div className="sq-post-left-container-bottom">
-              <AnswersList question={question}/>
+                <AnswersList question={question} />
 
                 <div className="sq-relatedq">
                   <p>Related questions</p>
-
                   <ul>
                     <li>
                       If we index the array, we can get to the JSON array
@@ -199,7 +207,6 @@ function ShowItem() {
                     </li>
                   </ul>
                 </div>
-                {/* PUT A CONDITIONAL IF NO ANSWERS THEN  SHOW RELATED QUESTIONS*/}
               </div>
             </div>
 
