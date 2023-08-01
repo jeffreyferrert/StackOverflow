@@ -5,7 +5,6 @@ json.questions do
             json.extract! question, :id, :user_id, :title, :body, :votes_counts, :created_at, :updated_at
             json.author question.user.username
             json.answerCount question.answers.length
-            json.voteCount question.votes.length
         end
     end
 

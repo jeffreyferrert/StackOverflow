@@ -46,14 +46,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_31_210925) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
-  create_table "votes", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["question_id"], name: "index_votes_on_question_id"
-    t.index ["user_id"], name: "index_votes_on_user_id"
-  end
-
   add_foreign_key "questions", "users"
 end
