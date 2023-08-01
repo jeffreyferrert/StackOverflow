@@ -36,10 +36,10 @@ export const getQuestion = (questionId) => {
   };
 };
 
-export const fetchQuestions = () => async (dispatch) => {
-  const response = await fetch("/api/questions");
+export const fetchQuestions = (query) => async (dispatch) => {
+  const url = query ? `/api/questions?query=${encodeURIComponent(query)}` : "/api/questions";
+  const response = await csrfFetch(url);
   const data = await response.json();
-
   dispatch({
     type: RECEIVE_QUESTIONS,
     questions: data.questions
@@ -47,7 +47,7 @@ export const fetchQuestions = () => async (dispatch) => {
 };
 
 export const fetchQuestion = (questionId) => async (dispatch) => {
-  const response = await fetch(`/api/questions/${questionId}`);
+  const response = await csrfFetch(`/api/questions/${questionId}`);
   const data = await response.json();
 
   dispatch({

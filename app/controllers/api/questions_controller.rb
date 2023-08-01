@@ -1,6 +1,11 @@
 class Api::QuestionsController < ApplicationController
     def index
-        @questions = Question.all.includes(:user, :answers)
+        if params[:query].present?
+            @questions = Question.where("title ILIKE ?", "%#{params[:query]}%").includes(:user, :answers)
+        else
+            @questions = Question.all.includes(:user, :answers)
+        end
+    
         render :index
     end
 

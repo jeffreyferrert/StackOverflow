@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import ListItem from "./listItem";
 import "./Styles/ListItems.css";
 import { fetchQuestions, getQuestions } from "../../store/questions";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function ListItems() {
@@ -10,10 +10,15 @@ function ListItems() {
   const dispatch = useDispatch();
   const questions = useSelector(getQuestions);
   const history = useHistory();
+  // const [input, setInput] = useState('')
 
   useEffect(() => {
     dispatch(fetchQuestions());
   }, []);
+
+  // const handleSubmit = () => {
+  //   dispatch(fetchQuestions(input));
+  // }
 
   const handleQuestionAsk = () => {
     if (sessionUser) {
@@ -27,6 +32,21 @@ function ListItems() {
     <div className="lis-main-container">
       <div className="lis-header-container">
         <div className="lis-headline">
+          {/* // #############################################################3 */}
+
+          {/* <>
+            <form onSubmit={handleSubmit}>
+              <input
+                placeholder="search for something"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+              />
+              <button type="submit">Search</button>
+            </form>
+          </> */}
+
+          {/* // #############################################################3 */}
+
           <p>All Questions</p>
           <button onClick={handleQuestionAsk}>Ask Question</button>
         </div>

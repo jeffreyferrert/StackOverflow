@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import menu from "../assets/menu.png"
 import lupa from "../assets/lupa.png"
 import logo from "../assets/logo-stackoverflow.png"
+import { fetchQuestions } from '../../store/questions';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
+  const [input, setInput] = useState('')
+  const dispatch = useDispatch();
 
   let sessionLinks;
   if (sessionUser) {
@@ -23,6 +26,10 @@ function Navigation() {
         <NavLink to="/signup" className="topbar-signup">Sign Up</NavLink>
       </>
     );
+  }
+
+  const handleSubmit = () => {
+    dispatch(fetchQuestions(input));
   }
 
   return (
@@ -43,8 +50,14 @@ function Navigation() {
           <li className="topbar-options-li"><a href="teams.com">For Teams</a></li>
         </ol>
 
-        <form action="/search" className="topbar-form" >
-          <input type="text" placeholder="Search..." maxLength="240" className="topbar-search" />
+        <form onSubmit={handleSubmit} className="topbar-form" >
+          <input 
+          type="text" 
+          placeholder="Search..." 
+          maxLength="240" 
+          className="topbar-search" 
+          value={input}
+            onChange={(e) => setInput(e.target.value)} />
           <img src={lupa} alt="lupa" className="topbar-lupa" />
         </form>
 
