@@ -28,7 +28,8 @@ function Navigation() {
     );
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     dispatch(fetchQuestions(input));
   }
 
@@ -50,15 +51,16 @@ function Navigation() {
           <li className="topbar-options-li"><a href="teams.com">For Teams</a></li>
         </ol>
 
-        <form onSubmit={handleSubmit} className="topbar-form" >
-          <input 
-          type="text" 
-          placeholder="Search..." 
-          maxLength="240" 
-          className="topbar-search" 
-          value={input}
+        <form onClick={handleSubmit} className="topbar-form" >
+          <input
+            type="text"
+            placeholder="Search..."
+            maxLength="240"
+            className="topbar-search"
+            value={input}
             onChange={(e) => setInput(e.target.value)} />
           <img src={lupa} alt="lupa" className="topbar-lupa" />
+          <button type='submit' hidden />
         </form>
 
         {sessionLinks}

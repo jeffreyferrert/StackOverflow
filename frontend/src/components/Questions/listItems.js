@@ -16,7 +16,8 @@ function ListItems() {
     dispatch(fetchQuestions());
   }, []);
 
-  // const handleSubmit = () => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
   //   dispatch(fetchQuestions(input));
   // }
 
