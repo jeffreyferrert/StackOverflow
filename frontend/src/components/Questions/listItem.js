@@ -16,8 +16,8 @@ function ListItem({ question }) {
     <div className="li-container">
       <div className="li-container-left">
         <div className="li-c-vote">{question.votesCounts} votes</div>
-        <div className="li-c-answer">{question.answerCount} answers</div>
-        <div className="li-c-views">206k views</div>
+        <div className={question.answerCount > 0 ? 'li-c-answer' : ''}>{question.answerCount} answers</div>
+        <div className="li-c-views">206 views</div>
       </div>
 
       <div className="li-container-right">
@@ -38,11 +38,12 @@ function ListItem({ question }) {
           </div>
 
           <div className="li-c-user">
-            <img src={photo} alt="user_photo" className="li-c-photo" />
+            <img src={`https://ui-avatars.com/api/?name=${question.author}&background=random&format=png`} alt="user_photo" className="li-c-photo" />
+            <span />
             <div className="li-c-username">{question.author}</div>
             <span />
             <div className="li-c-lastmodified">
-            <span>{question.createdAt !== question.updatedAt ? "Modified" : "Asked"}</span>
+              <span>{question.createdAt !== question.updatedAt ? "Modified" : "Asked"}</span>
               {formatDate(question.updatedAt)}
             </div>
           </div>

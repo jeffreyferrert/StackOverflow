@@ -94,7 +94,9 @@ function AnswerItem({ answer }) {
               <span>{answer.createdAt !== answer.updatedAt ? "Modified" : "Asked"}</span>
               {formatDate(answer.updatedAt)}
               <div className="ansi-sub-owner">
-                <img src={photo} alt="user_photo" className="ansi-c-photo" />
+                <img
+                  src={`https://ui-avatars.com/api/?name=${answer.author}&background=random&format=png`} alt="user_photo"
+                  className="sq-c-photo" />
                 <a href="#">{answer.author}</a>
               </div>
             </div>

@@ -62,7 +62,7 @@ function ShowItem() {
     } else {
       newVoteCount = question.votesCounts - 1
     }
-    dispatch(updateQuestion({ id: questionId, votesCounts: newVoteCount })); 
+    dispatch(updateQuestion({ id: questionId, votesCounts: newVoteCount }));
   };
 
   const formatDate = (dateString) => {
@@ -175,10 +175,9 @@ function ShowItem() {
                       {formatDate(question.updatedAt)}
                       <div className="sq-sub-owner">
                         <img
-                          src={photo}
+                          src={`https://ui-avatars.com/api/?name=${question.author}&background=random&format=png`}
                           alt="user_photo"
-                          className="sq-c-photo"
-                        />
+                          className="sq-c-photo" />
                         <a href="#">{question.author}</a>
                       </div>
                     </div>

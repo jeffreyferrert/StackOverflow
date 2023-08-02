@@ -4,7 +4,15 @@ import logo from "../assets/logo-stackoverflow.png";
 import logo1 from "../assets/img1.svg";
 import logo2 from "../assets/img2.svg";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+
+import intercom from "../assets/intercom.png";
+import expensify from "../assets/expensify.png";
+import microsoft from "../assets/microsoft.png";
+import instacart from "../assets/instacart.png";
+
 import Footer from "../SideBars/footer";
+
+
 
 function Landing() {
   const [wordChanging, setwordChanging] = useState("developer");
@@ -142,13 +150,15 @@ function Landing() {
         </div>
 
         <div className="container-p5">
-          {/* HOW TO DO THE CARROUSEL??? */}
           <p>
             Thousands of organizations around the globe use Stack Overflow for
             Teams
           </p>
           <div className="carrousel">
-            <img className="logo-img" src={logo} alt="so_icon" />
+            <img className="logo-img" src={intercom} alt="so_icon" />
+            <img className="logo-img" src={expensify} alt="so_icon" />
+            <img className="logo-img" src={microsoft} alt="so_icon" />
+            <img className="logo-img" src={instacart} alt="so_icon" />
           </div>
         </div>
 

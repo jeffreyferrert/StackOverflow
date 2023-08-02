@@ -38,7 +38,7 @@ function Navigation() {
       <div id="topbar-container">
 
         <nav className="topbar-menu">
-          <img className="topbar-menu-img" src={menu} alt="" />
+          {/* <img className="topbar-menu-img" src={menu} alt="" /> */}
         </nav>
 
         <NavLink exact to="/" className="topbar-logo">

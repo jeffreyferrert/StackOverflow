@@ -17,7 +17,7 @@ p {
   /* padding: 4px 4px 4px 0px; */
   color: hsl(210, 8%, 35%);
   line-height: 2;
-  font-size: 13px;
+  font-size: 12px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -37,12 +37,64 @@ li {
   
 }
 
+li:hover {
+color: black;
+}
+
 .select-option {
   font-weight: bold;
-  background-color: hsl(210, 8%, 95%);
+  /* background-color: hsl(210, 8%, 95%); */
   color: hsl(210, 8%, 5%);
-  border-right: 3px solid hsl(27, 90%, 55%);
-  margin-left: -40px;
-  padding-left: 40px;
+  /* margin-left: -40px; */
+  /* padding-left: 40px; */
+
+}
+
+.collectibles {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.world {
+display: flex;
+/* justify-content: space-between; */
+align-items: center;
+background-color: hsl(210, 8%, 95%);
+margin-left: -30px;
+padding-left: 30px;
+border-right: 3px solid hsl(27, 90%, 55%);
+
+}
+
+.c-parra {
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+ 
+}
+
+.c-parra:hover {
+  color: black;
+
+}
+
+.fa-stack { font-size: 0.5em; }
+
+.fa-earth-americas {
+  margin-left: -20px;
+  font-size: 0.9em;
+}
+.home {
+  font-size: 13px !important;
+}
+
+.home:hover {
+  color: black;
+
+}
+
+.teams:hover {
+  color: black;
 
 }
