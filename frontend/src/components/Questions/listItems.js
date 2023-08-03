@@ -38,7 +38,7 @@ function ListItems() {
     }
   }, [dispatch, searchQuery]);
 
-  
+
   const handleQuestionAsk = () => {
     if (sessionUser) {
       history.push("/questions/ask");

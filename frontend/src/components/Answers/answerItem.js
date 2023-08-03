@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { deleteAnswer, updateAnswer } from "../../store/answers";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function AnswerItem({ answer }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -49,7 +50,7 @@ function AnswerItem({ answer }) {
     <div className="ansi-main-container">
       <div className="ansi-post-left-container-top">
         <div className="ansi-votecell">
-        <button className="" onClick={() => handleVote("up")}>
+          <button className="" onClick={() => handleVote("up")}>
             <i
               className="fa-solid fa-caret-up"
               size="2xl"
@@ -107,7 +108,12 @@ function AnswerItem({ answer }) {
                 <img
                   src={`https://ui-avatars.com/api/?name=${answer.author}&background=random&format=png`} alt="user_photo"
                   className="sq-c-photo" />
-                <a href="#">{answer.author}</a>
+                <div className="li-c-username">
+                  <Link to={`/questions?search=${answer.userId}`}>
+                    {answer.author}
+                  </Link>
+                </div>
+                {/* <a href="#">{answer.author}</a> */}
               </div>
             </div>
           </div>

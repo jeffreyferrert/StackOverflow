@@ -2,7 +2,7 @@ class Api::QuestionsController < ApplicationController
     def index
         if params[:query].present?
             query = "%#{params[:query]}%"
-            @questions = Question.where("title ILIKE ? OR body ILIKE ?", query, query).includes(:user, :answers)
+            @questions = Question.where("title ILIKE ? OR body ILIKE ? OR user_id = ?", query, query, params[:query].to_i).includes(:user, :answers)
         else
             @questions = Question.all.includes(:user, :answers)
         end

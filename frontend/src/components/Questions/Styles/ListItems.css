@@ -11,10 +11,11 @@
   margin-bottom: 10px;
 }
 
-.lis-headline>p {
+.lis-headline > p {
   font-size: 27px;
   margin: 0px;
 }
+
 
 .lis-headline button {
   color: white;

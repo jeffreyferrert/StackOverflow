@@ -178,7 +178,12 @@ function ShowItem() {
                           src={`https://ui-avatars.com/api/?name=${question.author}&background=random&format=png`}
                           alt="user_photo"
                           className="sq-c-photo" />
-                        <a href="#">{question.author}</a>
+                        <div className="li-c-username">
+                          <Link to={`/questions?search=${question.userId}`}>
+                            {question.author}
+                          </Link>
+                        </div>
+                        {/* <a href="#">{question.author}</a> */}
                       </div>
                     </div>
                   </div>

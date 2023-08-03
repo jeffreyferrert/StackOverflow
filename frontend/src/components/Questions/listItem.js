@@ -12,7 +12,7 @@ const formatDate = (dateString) => {
 };
 
 function ListItem({ question }) {
-  
+
 
 
   return (
@@ -35,7 +35,6 @@ function ListItem({ question }) {
               <li>c#</li>
               <li>sql</li>
               <li>asp.net-mvc</li>
-              {/* <li>enity-framework</li> */}
               <li>sql-update</li>
             </ul>
           </div>
@@ -43,7 +42,11 @@ function ListItem({ question }) {
           <div className="li-c-user">
             <img src={`https://ui-avatars.com/api/?name=${question.author}&background=random&format=png`} alt="user_photo" className="li-c-photo" />
             <span />
-            <div className="li-c-username">{question.author}</div>
+            <div className="li-c-username">
+              <Link to={`/questions?search=${question.userId}`}>
+                {question.author}
+              </Link>
+            </div>
             <span />
             <div className="li-c-lastmodified">
               <span>{question.createdAt !== question.updatedAt ? "Modified" : "Asked"}</span>
