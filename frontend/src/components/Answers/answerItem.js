@@ -26,6 +26,16 @@ function AnswerItem({ answer }) {
     dispatch(deleteAnswer(answer.id));
   };
 
+  const handleVote = (vote) => {
+    let newVoteCount;
+    if (vote === "up") {
+      newVoteCount = answer.votesCounts + 1
+    } else {
+      newVoteCount = answer.votesCounts - 1
+    }
+    dispatch(updateAnswer({ id: answer.id, body: answer.body, user_id: answer.userId, question_id: answer.questionId, votesCounts: newVoteCount }));
+  };
+
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     const month = date.toLocaleString("en-US", { month: "short" });
@@ -37,17 +47,18 @@ function AnswerItem({ answer }) {
 
   return (
     <div className="ansi-main-container">
+      {/* {console.log(answer)} */}
       <div className="ansi-post-left-container-top">
         <div className="ansi-votecell">
-          <button className="">
+        <button className="" onClick={() => handleVote("up")}>
             <i
               className="fa-solid fa-caret-up"
               size="2xl"
               style={{ color: "#74777b" }}
             />
           </button>
-          0
-          <button className="">
+          {answer.votesCounts}
+          <button className="" onClick={() => handleVote("down")}>
             <i
               className="fa-solid fa-caret-down"
               size="2xl"

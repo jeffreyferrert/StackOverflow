@@ -3,3 +3,11 @@
     justify-content: center;
     background-color: #FFFFFF;
 }
+
+@media (max-width: 390px) {
+    .hide {
+        display: none;
+      }
+
+
+}

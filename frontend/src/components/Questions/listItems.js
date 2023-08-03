@@ -10,16 +10,23 @@ function ListItems() {
   const dispatch = useDispatch();
   const questions = useSelector(getQuestions);
   const history = useHistory();
-  // const [input, setInput] = useState('')
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+      const handleResize = () => {
+          setWindowWidth(window.innerWidth);
+      };
+
+      window.addEventListener('resize', handleResize);
+
+      return () => {
+          window.removeEventListener('resize', handleResize);
+      };
+  }, []);
 
   useEffect(() => {
     dispatch(fetchQuestions());
   }, []);
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   dispatch(fetchQuestions(input));
-  // }
 
   const handleQuestionAsk = () => {
     if (sessionUser) {
@@ -33,21 +40,6 @@ function ListItems() {
     <div className="lis-main-container">
       <div className="lis-header-container">
         <div className="lis-headline">
-          {/* // #############################################################3 */}
-
-          {/* <>
-            <form onSubmit={handleSubmit}>
-              <input
-                placeholder="search for something"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-              />
-              <button type="submit">Search</button>
-            </form>
-          </> */}
-
-          {/* // #############################################################3 */}
-
           <p>All Questions</p>
           <button onClick={handleQuestionAsk}>Ask Question</button>
         </div>
@@ -58,8 +50,8 @@ function ListItems() {
             <ul>
               <li className="lis-h-b1">Newest</li>
               <li>Active</li>
-              <li>Bountied</li>
-              <li>Unanswered</li>
+              <li className="{windowWidth < 500 ? hide : ''}">Bountied</li>
+              <li className="{windowWidth < 500 ? hide : ''}">Unanswered</li>
               <li className="lis-h-b2">
                 More
                 <span />

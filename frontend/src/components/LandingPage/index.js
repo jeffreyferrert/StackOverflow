@@ -1,5 +1,5 @@
 import "./Landing.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../assets/logo-stackoverflow.png";
 import logo1 from "../assets/img1.svg";
 import logo2 from "../assets/img2.svg";
@@ -10,12 +10,27 @@ import expensify from "../assets/expensify.png";
 import microsoft from "../assets/microsoft.png";
 import instacart from "../assets/instacart.png";
 
-import Footer from "../SideBars/footer";
+// import Footer from "../SideBars/footer";
 
 
 
 function Landing() {
   const [wordChanging, setwordChanging] = useState("developer");
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // {windowWidth <= 500 ? logoicon : logo}
 
   function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -71,11 +86,16 @@ function Landing() {
         <div className="container-p2">
           Every
           <span />
+          {windowWidth <= 500 ? <br /> : ''}
           <span className="changing-text">{wordChanging}</span>
+          {windowWidth <= 500 ? <br /> : ''}
           <span />
           has a
-          <br />
-          tab open to Stack Overflow
+          {windowWidth <= 500 ? '' : <br />}
+          <span />
+          tab open to
+          {windowWidth <= 500 ? <br /> : ''}
+          Stack Overflow
         </div>
 
         <div className="container-p3">
@@ -157,8 +177,8 @@ function Landing() {
           <div className="carrousel">
             <img className="logo-img" src={intercom} alt="so_icon" />
             <img className="logo-img" src={expensify} alt="so_icon" />
-            <img className="logo-img" src={microsoft} alt="so_icon" />
             <img className="logo-img" src={instacart} alt="so_icon" />
+            {/* <img className="logo-img" src={microsoft} alt="so_icon" /> */}
           </div>
         </div>
 
@@ -223,6 +243,7 @@ function Landing() {
             <span>Box</span>
           </div>
         </div>
+        {/* <Footer /> */}
       </div>
     </div>
   );

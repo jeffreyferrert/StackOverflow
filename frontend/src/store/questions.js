@@ -88,6 +88,7 @@ const questionObj = {question: {id, title, body,  user_id,  votesCounts}}
     body: JSON.stringify(questionObj),
   });
   const data = await response.json();
+  
   dispatch({
     type: RECEIVE_QUESTION,
     question: data,
@@ -113,7 +114,6 @@ const questionsReducer = (state = {}, action) => {
       newState = { ...newState, ...action.question.question };
       return newState;
     case RECEIVE_QUESTIONS:
-      // debugger
       newState = { ...action.questions };
       return newState;
     case REMOVE_QUESTION:

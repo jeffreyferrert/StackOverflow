@@ -132,3 +132,33 @@
 .topbar-signup:hover {
   background-color: hsla(206, 100%, 40%, 1);
 }
+
+
+@media (max-width: 390px) {
+.topbar-container {
+}
+
+.topbar-logo-img {
+  width: 40px;
+  height: auto;
+  padding: 0px 8px 0px 8px;
+  margin-left: 10px;
+}
+
+
+.topbar-options {
+  width: auto;
+  margin-right: auto;
+}
+
+.topbar-options li {
+  padding: 6px 12px 6px 0 !important;
+
+}
+
+
+.hide {
+  display: none;
+}
+
+}

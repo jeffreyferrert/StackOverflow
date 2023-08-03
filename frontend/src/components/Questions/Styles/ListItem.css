@@ -12,8 +12,8 @@ body {
 .li-container-left {
     font-size: 13px;
     margin: 0 16px 4px 0;
-    max-width: 80px;
-    width: 100%;
+    width: 80px;
+    /* width: 100%; */
     color: hsl(210, 8%, 45%);
     display: flex;
     flex-direction: column;
@@ -133,4 +133,66 @@ body {
 }
 .li-c-lastmodified:hover {
     color: hsl(210, 8%, 35%);
+}
+
+@media (max-width: 390px) {
+    .hide {
+        display: none;
+      }
+
+.li-container {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.li-container-left {
+    display: flex !important;
+    flex-direction: row;
+    width: 358px;
+align-items: center;
+}
+
+.li-c-vote {
+    margin-right: 10px;
+}
+
+.li-c-answer {
+background-color: hsl(140,41%,31%);
+color: hsl(0,0%,100%);
+}
+
+.li-c-views {
+    margin-left: 10px;
+}
+
+
+.li-c-title {
+    font-size: 15px;
+}
+
+.li-c-excerpt {
+    font-size: 12px;
+}
+
+.li-c-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.li-c-meta {
+    flex-wrap: wrap;
+}
+
+.li-c-user {
+    margin-top: 15px;
+    align-self: flex-end;
+}
+
+
+
+
+
+
+
 }

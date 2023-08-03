@@ -14,26 +14,24 @@ margin-top: auto; */
   display: flex;
   flex-flow: row wrap;
   max-width: 1264px;
-    width: 100%;
-    margin: 0 auto;
-    justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: space-between;
 }
 
 .f-logo-img {
   margin: -20px -70px 32px 0;
   height: 50px;
   width: 50px;
-  /* flex: 0 0 64px; */
 }
 
 .f-c1 {
   padding: 0 12px 24px 0;
-  /* flex: 1 0 auto; */
 
 }
 
 .f-c1 span {
-  color: hsl(210,8%,75%);
+  color: hsl(210, 8%, 75%);
   font-weight: bold;
   line-height: 17px;
   cursor: pointer;
@@ -41,19 +39,19 @@ margin-top: auto; */
   margin-bottom: 12px;
 }
 
-.f-c1 > ul {
-margin: 0;
-margin-top: 12px;
-list-style: none;
-padding: 0;
+.f-c1>ul {
+  margin: 0;
+  margin-top: 12px;
+  list-style: none;
+  padding: 0;
 }
 
-.f-c1 > ul > li {
+.f-c1>ul>li {
   margin: 0;
   padding: 4px 0;
   display: list-item;
   font-size: 13px;
-  color: hsl(210,8%,60%);
+  color: hsl(210, 8%, 60%);
   line-height: 17px;
   cursor: pointer;
 
@@ -64,12 +62,70 @@ padding: 0;
   flex-direction: column;
   justify-content: space-between;
   font-weight: 100 !important;
-font-size: 10px !important;
-width: 315px;
-color: hsl(210,8%,60%) !important;
+  font-size: 10px !important;
+  width: 315px;
+  color: hsl(210, 8%, 60%) !important;
 }
 
 .extra2 {
-word-spacing: 5px;
-  
+  word-spacing: 5px;
+
+}
+
+@media (max-width: 390px) {
+  .f-content {
+    padding: 16px !important;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .footer-main-container {
+    width: 390px !important;
+    height: 394px;
+  }
+
+  .f-logo-img {
+    visibility: hidden;
+    display: none;
+  }
+
+  .f-c1 {
+    padding: 0 12px 14px 0;
+
+  }
+
+  .f-c1 span {
+    font-size: 9px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+
+  }
+
+  .f-c1 ul {
+    display: flex;
+    width: 340px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  .f-c1 li {
+    font-size: 9px !important;
+    margin: 0;
+    margin-right: 10px !important;
+    padding: 0 !important;
+    white-space: nowrap;
+  }
+
+
+  .extra3 {
+    padding-top: 40px !important;
+    padding-bottom: 0 !important;
+
+  }
+
+  .extra {
+    font-size: 10px !important;
+  }
 }

@@ -78,3 +78,11 @@ h5 {
 .profile-dropdown button:hover {
     background-color: hsla(206, 100%, 40%, 1);
 }
+
+
+@media (max-width: 390px) {
+
+.main-button {
+    margin-right: 10px;
+}
+}

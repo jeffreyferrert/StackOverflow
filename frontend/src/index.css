@@ -3,12 +3,7 @@ body {
     margin: 0; 
     background-color: #F1F2F3;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    /* font-kerning: auto; */
 }
 
 .app-main-container {
-    /* min-height: 100vh;
-
-    display: flex;
-    flex-direction: column; */
 }

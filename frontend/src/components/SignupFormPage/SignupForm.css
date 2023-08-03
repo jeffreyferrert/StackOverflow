@@ -14,7 +14,7 @@
     padding-top: 50px;
 }
 
-.su-info > h1 {
+.su-info>h1 {
     font-size: 25px;
     margin: 0;
     padding: 0;
@@ -22,11 +22,11 @@
     margin-bottom: 32px;
 }
 
-.su-info > ul {
+.su-info>ul {
     padding-left: 0;
 }
 
-.su-info > ul > li{
+.su-info>ul>li {
     margin-bottom: 24px;
     list-style-type: none;
     font-size: 14px;
@@ -42,8 +42,8 @@
 }
 
 .right-panel {
- display: flex;
- flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
 }
 
@@ -56,7 +56,7 @@
     background-color: white;
     border-radius: 7px;
     text-align: left;
-    box-shadow: 0 10px 24px hsla(0,0%,0%,0.05), 0 20px 48px hsla(0, 0%, 0%, 0.05), 0 1px 4px hsla(0, 0%, 0%, 0.1);
+    box-shadow: 0 10px 24px hsla(0, 0%, 0%, 0.05), 0 20px 48px hsla(0, 0%, 0%, 0.05), 0 1px 4px hsla(0, 0%, 0%, 0.1);
     margin-bottom: 24px;
 }
 
@@ -67,7 +67,7 @@
     margin-right: 0;
 }
 
-.su-form-container > label { 
+.su-form-container>label {
     font-size: 14px;
     margin: 4px;
     font-weight: bold;
@@ -75,7 +75,7 @@
     padding: 0 2px;
 }
 
-label > input { 
+label>input {
     border: 1px solid hsla(210, 8%, 75%, 1);
     border-radius: 3px;
     color: hsla(210, 8%, 5%, 1);
@@ -88,14 +88,14 @@ label > input {
 
 a {
     text-decoration: none;
-    color: hsl(206,100%,40%);
+    color: hsl(206, 100%, 40%);
 }
 
 span {
     color: hsla(210, 8%, 45%, 1);
     font-size: 11.5px;
     margin: 4px;
-    
+
 
 }
 
@@ -117,7 +117,7 @@ span {
 }
 
 .su-signup:hover {
-background-color: #0074CC;
+    background-color: #0074CC;
 }
 
 .su-message {
@@ -125,4 +125,20 @@ background-color: #0074CC;
     margin-top: 15px;
     font-size: 12px;
     color: hsla(210, 8%, 45%, 1);
+}
+
+
+@media (max-width: 390px) {
+    .hide {
+        display: none;
+    }
+
+    .su-main-container {
+        padding: 24px 16px;
+    }
+
+    .right-panel {
+        align-items: center;
+    }
+
 }

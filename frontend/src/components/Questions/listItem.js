@@ -12,6 +12,9 @@ const formatDate = (dateString) => {
 };
 
 function ListItem({ question }) {
+  
+
+
   return (
     <div className="li-container">
       <div className="li-container-left">
@@ -32,7 +35,7 @@ function ListItem({ question }) {
               <li>c#</li>
               <li>sql</li>
               <li>asp.net-mvc</li>
-              <li>enity-framework</li>
+              {/* <li>enity-framework</li> */}
               <li>sql-update</li>
             </ul>
           </div>

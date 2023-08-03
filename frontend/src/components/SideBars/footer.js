@@ -55,7 +55,7 @@ function Footer() {
           </ul>
         </div>
 
-        <div className="f-c1 extra">
+        <div className="f-c1 extra extra3">
           <span className="extra extra2">Blog Facebook Twitter Linkedin Instagram</span>
           <br />
           <span className="extra">Site design / logo © 2023 Stack Exchange Inc; user contributions licensed under CC BY-SA. rev 2023.7.27.43548</span>

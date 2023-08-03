@@ -65,15 +65,16 @@ export const createAnswer = (answer) => async (dispatch) => {
 };
 
 export const updateAnswer = (answer) => async (dispatch) => {
-  const { id, body } = answer;
+  const { id, body, user_id, question_id, votesCounts } = answer;
+  const answerObj = {answer: { body, user_id, question_id, votesCounts }}
 
   const response = await csrfFetch(`/api/answers/${id}`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ body }),
+    body: JSON.stringify(answerObj),
   });
   const data = await response.json();
-
+// debugger
   dispatch({
     type: RECEIVE_ANSWER,
     answer: data,

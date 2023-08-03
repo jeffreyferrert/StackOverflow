@@ -18,7 +18,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Landing />
-          <Footer />
+          {/* <Footer /> */}
         </Route>
         <Route path="/login">
           <LoginFormPage />

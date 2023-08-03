@@ -6,6 +6,7 @@ import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import temp from "../assets/stackoverflow_icon.png"
+import { useEffect } from "react";
 
 
 function SignupFormPage() {
@@ -16,6 +17,19 @@ function SignupFormPage() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   if (sessionUser) return <Redirect to="/" />;
 
@@ -27,10 +41,9 @@ function SignupFormPage() {
         .catch(async (res) => {
           let data;
           try {
-            // .clone() essentially allows you to read the response body twice
             data = await res.clone().json();
           } catch {
-            data = await res.text(); // Will hit this case if, e.g., server is down
+            data = await res.text();
           }
           if (data?.errors) setErrors(data.errors);
           else if (data) setErrors([data]);
@@ -43,8 +56,8 @@ function SignupFormPage() {
   return (
     <div className="su-main-container">
 
-      <div className="su-info">
-        <h1>Join the Stack Overflow <br/>community</h1>
+      <div className="su-info {windowWidth < 500 ? hide : ''}">
+        <h1>Join the Stack Overflow <br />community</h1>
         <ul>
           <li>
             <img className="su-icon" src={temp} alt="so_icon" />
@@ -55,7 +68,7 @@ function SignupFormPage() {
             Unlock new privileges like voting and commenting
           </li>
           <li>
-            <img className="su-icon"  src={temp} alt="so_icon" />
+            <img className="su-icon" src={temp} alt="so_icon" />
             Save your favorite questions, answers, watch tags, and more
           </li>
           <li>
@@ -135,9 +148,9 @@ function SignupFormPage() {
         </form>
 
         <div className="redirect-su">
-        Already have an account?
-        <Link to="login" className="link"> Log in</Link>
-      </div>
+          Already have an account?
+          <Link to="login" className="link"> Log in</Link>
+        </div>
 
       </div>
 

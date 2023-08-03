@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
@@ -6,12 +6,26 @@ import './Navigation.css';
 import menu from "../assets/menu.png"
 import lupa from "../assets/lupa.png"
 import logo from "../assets/logo-stackoverflow.png"
+import logoicon from "../assets/stackoverflow_icon.png"
 import { fetchQuestions } from '../../store/questions';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
   const [input, setInput] = useState('')
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   let sessionLinks;
   if (sessionUser) {
@@ -37,21 +51,17 @@ function Navigation() {
     <>
       <div id="topbar-container">
 
-        <nav className="topbar-menu">
-          {/* <img className="topbar-menu-img" src={menu} alt="" /> */}
-        </nav>
-
         <NavLink exact to="/" className="topbar-logo">
-          <img className="topbar-logo-img" src={logo} alt="so_icon" height="30px" />
+          <img className="topbar-logo-img" src={windowWidth <= 500 ? logoicon : logo} alt="so_icon" height="30px" />
         </NavLink>
 
         <ol className="topbar-options">
-          <li className="topbar-options-li"><a href="/about">About</a></li>
+          <li className="topbar-options-li {windowWidth < 500 ? hide : ''}"><a href="/about">About</a></li>
           <li className="topbar-options-li"><a href="/questions">Questions</a></li>
-          <li className="topbar-options-li"><a href="teams.com">For Teams</a></li>
+          <li className="topbar-options-li {windowWidth < 500 ? hide : ''}"><a href="teams.com">For Teams</a></li>
         </ol>
 
-        <form onClick={handleSubmit} className="topbar-form" >
+        <form onClick={handleSubmit} className="topbar-form {windowWidth < 500 ? hide : ''}" >
           <input
             type="text"
             placeholder="Search..."

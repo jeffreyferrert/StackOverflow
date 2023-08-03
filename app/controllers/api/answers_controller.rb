@@ -21,7 +21,7 @@ class Api::AnswersController < ApplicationController
 
     def update
         @answer = Answer.find_by(id: params[:id])
-    
+    # debugger
         if @answer.update(answer_params)
           render :show
         else
@@ -36,6 +36,6 @@ class Api::AnswersController < ApplicationController
 
     private
     def answer_params
-        params.require(:answer).permit(:body, :user_id, :question_id)
+        params.require(:answer).permit(:body, :user_id, :question_id, :votes_counts)
     end
 end
