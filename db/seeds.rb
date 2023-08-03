@@ -33,18 +33,19 @@ ApplicationRecord.transaction do
       password: 'password'
     }) 
   end
-  
-  20.times do 
+ 
+  45.times do 
     Question.create!({
       title: Faker::Hacker.say_something_smart,
-      body: Faker::Lorem.paragraph(sentence_count: 20, supplemental: true, random_sentences_to_add: 10),
+      body: (rand(5...15).times.map {Faker::Hacker.say_something_smart}).join(" "),
       user_id: Faker::Number.between(from: User.first.id, to: User.last.id)
     })
   end
 
-  40.times do
+
+  80.times do
     Answer.create!({
-      body: Faker::Hacker.say_something_smart + " " + Faker::Hacker.say_something_smart + " " + Faker::Hacker.say_something_smart + " " + Faker::Hacker.say_something_smart + " " + Faker::Hacker.say_something_smart,
+      body: (rand(2...10).times.map {Faker::Hacker.say_something_smart}).join(" "),
       user_id: Faker::Number.between(from: User.first.id, to: User.last.id),
       question_id: Faker::Number.between(from: Question.first.id, to: Question.last.id)
     })
