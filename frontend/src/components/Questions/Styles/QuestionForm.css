@@ -200,9 +200,9 @@
 
   .qf-post-body {
     width: 290px;
-
-    .qf-post-tags {
-      width: 290px;
-    }
+  }
+  
+  .qf-post-tags {
+    width: 290px;
   }
 }

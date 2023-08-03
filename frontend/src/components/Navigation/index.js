@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory, useParams } from "react-router-dom";
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import menu from "../assets/menu.png"
@@ -11,9 +12,11 @@ import { fetchQuestions } from '../../store/questions';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
+  const history = useHistory();
   const [input, setInput] = useState('')
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const dispatch = useDispatch();
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -44,13 +47,13 @@ function Navigation() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(fetchQuestions(input));
+    history.push(`/questions?search=${input}`);
+    setInput('');
   }
 
   return (
     <>
       <div id="topbar-container">
-
         <NavLink exact to="/" className="topbar-logo">
           <img className="topbar-logo-img" src={windowWidth <= 500 ? logoicon : logo} alt="so_icon" height="30px" />
         </NavLink>
@@ -61,7 +64,7 @@ function Navigation() {
           <li className="topbar-options-li {windowWidth < 500 ? hide : ''}"><a href="teams.com">For Teams</a></li>
         </ol>
 
-        <form onClick={handleSubmit} className="topbar-form {windowWidth < 500 ? hide : ''}" >
+        <form onSubmit={handleSubmit} className="topbar-form {windowWidth < 500 ? hide : ''}" >
           <input
             type="text"
             placeholder="Search..."

@@ -3,7 +3,7 @@ import ListItem from "./listItem";
 import "./Styles/ListItems.css";
 import { fetchQuestions, getQuestions } from "../../store/questions";
 import { useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { Link, useHistory, useLocation, useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 function ListItems() {
   const sessionUser = useSelector((state) => state.session.user);
@@ -11,6 +11,12 @@ function ListItems() {
   const questions = useSelector(getQuestions);
   const history = useHistory();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+
+  const location = useLocation();
+  const searchQuery = new URLSearchParams(location.search).get('search');
+
+
 
   useEffect(() => {
       const handleResize = () => {
@@ -25,9 +31,14 @@ function ListItems() {
   }, []);
 
   useEffect(() => {
-    dispatch(fetchQuestions());
-  }, []);
+    if (searchQuery) {
+      dispatch(fetchQuestions(searchQuery));
+    } else {
+      dispatch(fetchQuestions());
+    }
+  }, [dispatch, searchQuery]);
 
+  
   const handleQuestionAsk = () => {
     if (sessionUser) {
       history.push("/questions/ask");
