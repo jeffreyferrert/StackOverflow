@@ -1,16 +1,13 @@
 .qf-main-container {
-  /* background-color: #f8f9f9; */
   min-height: 750px;
   max-width: 1215px;
   padding: 0 24px 24px 24px;
   margin: 0 auto;
 }
 
-.qf-notice > h1 {
+.qf-notice>h1 {
   font-weight: 600;
-  /* font-weight: bold; */
   font-size: 28px;
-  /* margin: 24px 0; */
   height: 80px;
   display: flex;
   align-items: center;
@@ -27,29 +24,35 @@
   width: 70%;
 }
 
-.qf-message > h2 {
+.qf-message>h2 {
   margin: 0;
   font-weight: 500;
 }
 
-.qf-message > p {
+.qf-message>p {
   margin: 10px 0;
   line-height: 1.5;
   font-size: 15px;
 }
-.qf-message > h4 {
+
+.qf-message>h4 {
   margin: 10px 0;
   font-size: 13px;
 
 }
 
 .qf-message ul {
-  margin: 0 10px 0 10px;
+  margin: 0px;
   padding-left: 20px;
-  line-height: 1.3;
+  /* line-height: 1; */
+  list-style: inside;
 }
+
 .qf-message li {
-  font-size: 13.5px;
+  line-height: 1.3;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
 }
 
 .qf-post-title {
@@ -63,22 +66,22 @@
   border-radius: 4px;
 }
 
-.qf-post-title > h4 {
+.qf-post-title>h4 {
   margin: 0;
 }
 
-.qf-post-title > p {
-  font-size: 11px;
+.qf-post-title>p {
+  font-size: 12px;
   color: hsl(210, 8%, 25%);
+  margin: 10px 0;
 }
 
-.qf-post-title > input {
+.qf-post-title>input {
   background-color: hsl(0, 0%, 100%);
   border: 1px solid hsl(210, 8%, 75%);
   color: hsl(210, 8%, 5%);
   font-size: 13px;
   width: 95%;
-  /* max-width: 753px; */
   padding: 7.8px 9.1px;
   border-radius: 6px;
 }
@@ -94,25 +97,22 @@
   border-radius: 4px;
 }
 
-.qf-post-body > h4 {
+.qf-post-body>h4 {
   margin: 0;
 }
 
-.qf-post-body > p {
-  font-size: 11px;
+.qf-post-body>p {
+  font-size: 12px;
   color: hsl(210, 8%, 25%);
-
-  /* padding: 0; */
-  /* margin: 0; */
+  margin: 10px 0;
 }
 
-.qf-post-body > textarea {
+.qf-post-body>textarea {
   background-color: hsl(0, 0%, 100%);
   border: 1px solid hsl(210, 8%, 75%);
   color: hsl(210, 8%, 5%);
   font-size: 13px;
   width: 95%;
-  /* max-width: 753px; */
   padding: 6px 12px;
   border-radius: 6px;
   height: 150px;
@@ -123,27 +123,23 @@
 .qf-post-tags {
   padding: 24px;
   margin-top: 16px;
-  /* display: flex;
-      flex-direction: column; */
   background-color: hsl(0, 0%, 100%);
   width: 70%;
   border: 1px solid hsl(210, 8%, 90%);
   border-radius: 4px;
 }
 
-.qf-post-tags > h4 {
+.qf-post-tags>h4 {
   margin: 0;
 }
 
-.qf-post-tags > p {
-  font-size: 11px;
+.qf-post-tags>p {
+  font-size: 12px;
   color: hsl(210, 8%, 25%);
-
-  /* padding: 0; */
-  /* margin: 0; */
+  margin: 10px 0;
 }
 
-.qf-post-tags > input {
+.qf-post-tags>input {
   background-color: hsl(0, 0%, 100%);
   border: 1px solid hsl(210, 8%, 75%);
   color: hsl(210, 8%, 5%);
@@ -172,4 +168,41 @@
 
 .qf-review:hover {
   background-color: hsla(206, 100%, 40%, 1);
+}
+
+
+@media (max-width: 390px) {
+  .qf-notice h1 {
+    margin: 22px 0;
+    font-size: 22px;
+    height: auto;
+  }
+
+  .qf-notice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .qf-message {
+    width: 290px;
+  }
+
+  .qf-message p {
+    font-size: 14px;
+    color: hsl(210, 8%, 25%);
+  }
+
+
+  .qf-post-title {
+    width: 290px;
+  }
+
+  .qf-post-body {
+    width: 290px;
+
+    .qf-post-tags {
+      width: 290px;
+    }
+  }
 }

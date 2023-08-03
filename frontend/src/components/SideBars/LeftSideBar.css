@@ -13,7 +13,7 @@ p {
   font-size: 11px;
 }
 
-.link > p {
+.link>p {
   /* padding: 4px 4px 4px 0px; */
   color: hsl(210, 8%, 35%);
   line-height: 2;
@@ -34,11 +34,11 @@ li {
   font-size: 13px;
   line-height: 2;
   padding: 4px 0;
-  
+
 }
 
 li:hover {
-color: black;
+  color: black;
 }
 
 .select-option {
@@ -57,13 +57,13 @@ color: black;
 }
 
 .world {
-display: flex;
-/* justify-content: space-between; */
-align-items: center;
-background-color: hsl(210, 8%, 95%);
-margin-left: -30px;
-padding-left: 30px;
-border-right: 3px solid hsl(27, 90%, 55%);
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  background-color: hsl(210, 8%, 95%);
+  margin-left: -30px;
+  padding-left: 30px;
+  border-right: 3px solid hsl(27, 90%, 55%);
 
 }
 
@@ -71,7 +71,7 @@ border-right: 3px solid hsl(27, 90%, 55%);
   padding: 0;
   margin: 0;
   font-size: 12px;
- 
+
 }
 
 .c-parra:hover {
@@ -79,12 +79,15 @@ border-right: 3px solid hsl(27, 90%, 55%);
 
 }
 
-.fa-stack { font-size: 0.5em; }
+.fa-stack {
+  font-size: 0.5em;
+}
 
 .fa-earth-americas {
   margin-left: -20px;
   font-size: 0.9em;
 }
+
 .home {
   font-size: 13px !important;
 }
@@ -97,4 +100,10 @@ border-right: 3px solid hsl(27, 90%, 55%);
 .teams:hover {
   color: black;
 
+}
+
+@media (max-width: 390px) {
+  .hide {
+    display: none;
+  }
 }

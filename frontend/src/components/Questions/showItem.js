@@ -149,6 +149,7 @@ function ShowItem() {
                       <li>sql-update</li>
                     </ul>
                   </div>
+
                   <div className="sq-post-menu">
                     <div className="sq-actions">
                       <span>Share</span>
@@ -181,6 +182,7 @@ function ShowItem() {
                       </div>
                     </div>
                   </div>
+
                   <div className="sq-add-comment">{addCommentsConditional}</div>
                 </div>
               </div>
@@ -189,6 +191,7 @@ function ShowItem() {
                 <AnswersList question={question} />
 
                 <div className="sq-relatedq">
+                  {/* MAKE THIS RANDOM */}
                   <p>Related questions</p>
                   <ul>
                     <li>

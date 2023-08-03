@@ -18,7 +18,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Landing />
-          {/* <Footer /> */}
+          <Footer />
         </Route>
         <Route path="/login">
           <LoginFormPage />
@@ -32,6 +32,7 @@ function App() {
         </Route>
         <Route exact path="/questions/ask">
           <QuestionForm />
+          <Footer />
         </Route>
         <Route exact path="/questions/:questionId">
           <ShowItem />

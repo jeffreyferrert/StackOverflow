@@ -47,7 +47,6 @@ function AnswerItem({ answer }) {
 
   return (
     <div className="ansi-main-container">
-      {/* {console.log(answer)} */}
       <div className="ansi-post-left-container-top">
         <div className="ansi-votecell">
         <button className="" onClick={() => handleVote("up")}>

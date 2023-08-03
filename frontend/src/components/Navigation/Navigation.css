@@ -20,7 +20,7 @@
   width: 17px;
   height: 17px;
   padding: 0px 12px;
-  
+
 }
 
 .topbar-logo {
@@ -41,7 +41,7 @@
   margin: 0;
   list-style-type: none;
   width: 235px;
-  height: 29px; 
+  height: 29px;
   justify-content: center;
   align-items: center;
 }
@@ -52,7 +52,7 @@
   padding: 6px 12px 6px 12px;
 }
 
-.topbar-options-li > a {
+.topbar-options-li>a {
   text-decoration: none;
   color: hsla(210, 8%, 35%, 1);
   font-size: 13px;
@@ -62,7 +62,7 @@
 .topbar-options-li:hover {
   background-color: hsla(210, 8%, 90%, 1);
   box-shadow: none;
-  cursor: pointer;  
+  cursor: pointer;
   padding: 3px 12px;
   border-radius: 1000px;
 }
@@ -74,7 +74,7 @@
   padding: 0px 8px 0px 8px;
   height: 32px;
   position: relative;
-  display: flex; 
+  display: flex;
   align-items: center;
 }
 
@@ -135,30 +135,29 @@
 
 
 @media (max-width: 390px) {
-.topbar-container {
-}
+  .topbar-container {}
 
-.topbar-logo-img {
-  width: 40px;
-  height: auto;
-  padding: 0px 8px 0px 8px;
-  margin-left: 10px;
-}
-
-
-.topbar-options {
-  width: auto;
-  margin-right: auto;
-}
-
-.topbar-options li {
-  padding: 6px 12px 6px 0 !important;
-
-}
+  .topbar-logo-img {
+    width: 40px;
+    height: auto;
+    padding: 0px 8px 0px 8px;
+    margin-left: 10px;
+  }
 
 
-.hide {
-  display: none;
-}
+  .topbar-options {
+    width: auto;
+    margin-right: auto;
+  }
+
+  .topbar-options li {
+    padding: 6px 12px !important;
+    font-weight: bold;
+  }
+
+
+  .hide {
+    display: none;
+  }
 
 }

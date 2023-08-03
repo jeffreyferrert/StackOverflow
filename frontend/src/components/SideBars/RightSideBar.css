@@ -145,3 +145,9 @@
 .rsb-box4 li:hover {
   color: hsl(206, 100%, 52%);
 }
+
+@media (max-width: 390px) {
+  .hide {
+    display: none;
+  }
+}

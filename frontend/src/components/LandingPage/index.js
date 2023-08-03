@@ -51,7 +51,10 @@ function Landing() {
   return (
     <div className="main-container">
       <div className="container">
-        <div className="container-p1">
+        <div className="container-bg">
+
+        </div>
+        <div className="container-p1 container-fg">
           <div className="container-p1-a">
             <i
               class="fa-solid fa-magnifying-glass fa-3x"
@@ -83,7 +86,7 @@ function Landing() {
           </div>
         </div>
 
-        <div className="container-p2">
+        <div className="container-p2 container-fg">
           Every
           <span />
           {windowWidth <= 500 ? <br /> : ''}
@@ -98,7 +101,7 @@ function Landing() {
           Stack Overflow
         </div>
 
-        <div className="container-p3">
+        <div className="container-p3 container-fg">
           <div className="big-container">
             100+ million
             <div className="small-container">
@@ -127,7 +130,7 @@ function Landing() {
           </div>
         </div>
 
-        <div className="container-p4">
+        <div className="container-p4 container-fg">
           <div className="container-p4-a">
             <img className="logo-img" src={logo} alt="so_icon" />
             <img className="other-img" src={logo1} alt="so_icon" />
@@ -169,7 +172,7 @@ function Landing() {
           </div>
         </div>
 
-        <div className="container-p5">
+        <div className="container-p5 container-fg">
           <p>
             Thousands of organizations around the globe use Stack Overflow for
             Teams
@@ -182,7 +185,7 @@ function Landing() {
           </div>
         </div>
 
-        <div className="container-p6">
+        <div className="container-p6 container-fg">
           <div className="cp6-1">
             <i
               class="fa-solid fa-quote-right fa-3x"

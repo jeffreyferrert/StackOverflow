@@ -21,3 +21,43 @@
     tab-size: 4;
     background-color: white;
 }
+
+@media (max-width: 390px) {
+
+.ansi-main-container {
+    width: 358px;
+    /* padding: 0 16px; */
+}
+
+
+.ansi-post-body{
+    width: 285px;
+}
+
+.ansi-post {
+    width: 285px;
+    margin: 0;
+    padding-right: 16px !important;
+
+}
+.ansi-post-body p{
+    margin: 0;
+}
+
+.ansi-post-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.ansi-owner {
+    margin-left: auto;
+    margin-top: 10px;
+    width: 55% !important;
+    border-radius: 6px;
+}
+
+.ansi-sub-owner {
+    margin-top: 5px;
+}
+
+}

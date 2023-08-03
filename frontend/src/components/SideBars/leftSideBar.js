@@ -1,9 +1,24 @@
 import { Link } from "react-router-dom";
 import "./LeftSideBar.css";
+import { useEffect, useState } from "react";
 
 function LeftSideBar() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+      const handleResize = () => {
+          setWindowWidth(window.innerWidth);
+      };
+
+      window.addEventListener('resize', handleResize);
+
+      return () => {
+          window.removeEventListener('resize', handleResize);
+      };
+  }, []);
+
   return (
-    <div className="lsb-main-container">
+    <div className="lsb-main-container {windowWidth < 500 ? hide : ''}">
       <Link to="/" className="link">
         <p className="home">Home</p>
       </Link>

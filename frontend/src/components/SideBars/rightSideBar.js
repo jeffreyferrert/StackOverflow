@@ -1,9 +1,24 @@
 import "./RightSideBar.css";
 import temp from "../assets/stackoverflow_icon.png";
+import { useEffect, useState } from "react";
 
 function RigthSideBar() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
   return (
-    <div className="rsb-main-container">
+    <div className="rsb-main-container {windowWidth < 500 ? hide : ''}">
       <div className="rsb-box1">
         <p>Custom Filters</p>
         <a>Create a custom filter</a>

@@ -14,7 +14,7 @@ function LoginFormPage() {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
-  if (sessionUser) return <Redirect to="/" />;
+  if (sessionUser) return <Redirect to="/questions" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,7 +35,7 @@ function LoginFormPage() {
 
   const demoUser = (e) => {
     e.preventDefault();
-    const demoUsername = "test";
+    const demoUsername = "jferrertorres";
     const demoPassword = "password";
     dispatch(sessionActions.login({ credential: demoUsername, password: demoPassword }));
   };
