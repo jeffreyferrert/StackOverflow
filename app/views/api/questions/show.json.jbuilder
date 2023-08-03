@@ -4,8 +4,6 @@ json.question do
         json.answer_ids @question.answers.to_a.map{ |answer| answer.id }
         json.author @question.user.username
         json.answerCount @question.answers.length
-
-
     end
 end
 json.answers do
