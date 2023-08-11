@@ -21,7 +21,6 @@ class Api::AnswersController < ApplicationController
 
     def update
         @answer = Answer.find_by(id: params[:id])
-    # debugger
         if @answer.update(answer_params)
           render :show
         else

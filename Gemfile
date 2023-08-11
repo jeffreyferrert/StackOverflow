@@ -22,6 +22,7 @@ gem "bcrypt"
 gem "jbuilder"
 gem "faker"
 gem "aws-sdk-s3"
+  gem "pry-rails"
 
 group :development, :test do
   gem "byebug", platforms: %i[ mri mingw x64_mingw ]
@@ -31,7 +32,6 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
   gem "annotate"
-  gem "pry-rails"
   gem "better_errors"
   gem "binding_of_caller"
 end

@@ -74,7 +74,6 @@ export const updateAnswer = (answer) => async (dispatch) => {
     body: JSON.stringify(answerObj),
   });
   const data = await response.json();
-// debugger
   dispatch({
     type: RECEIVE_ANSWER,
     answer: data,
