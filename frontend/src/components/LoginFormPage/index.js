@@ -25,7 +25,7 @@ function LoginFormPage() {
         try {
           data = await res.clone().json();
         } catch {
-          data = await res.text(); 
+          data = await res.text();
         }
         if (data?.errors) setErrors(data.errors);
         else if (data) setErrors([data]);
@@ -44,41 +44,41 @@ function LoginFormPage() {
     <div className="li-main-container">
 
       <img className="li-icon" src={temp} alt="so_icon" />
-    <div className="li-form-container">
+      <div className="li-form-container">
 
-      <form onSubmit={handleSubmit} >
+        <form onSubmit={handleSubmit} >
 
-        <ul>
-          {errors.map(error => <li key={error}>{error}</li>)}
-        </ul>
+          <ul>
+            {errors.map(error => <li key={error}>{error}</li>)}
+          </ul>
 
-        <label>
-          Username or Email
-          <input
-            type="text"
-            value={credential}
-            onChange={(e) => setCredential(e.target.value)}
-            required
-          />
-        </label>
+          <label>
+            Username or Email
+            <input
+              type="text"
+              value={credential}
+              onChange={(e) => setCredential(e.target.value)}
+              required
+            />
+          </label>
 
-        <span></span><br />
+          <span></span><br />
 
-        <label>
-          Password
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
+          <label>
+            Password
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </label>
 
-        <button type="submit" className="li-login">Log In</button>
+          <button type="submit" className="li-login">Log In</button>
 
-      </form>
-      <button onClick={demoUser} className="li-login">Demo User</button>
-    </div>
+        </form>
+        <button onClick={demoUser} className="li-login">Demo User</button>
+      </div>
 
       <div className="redirect-su">
         Don’t have an account?
