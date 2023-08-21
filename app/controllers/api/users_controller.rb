@@ -8,13 +8,12 @@ class Api::UsersController < ApplicationController
       login!(@user)
       render :show
     else
-      # render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
       errors = {}
-  errors[:email] = @user.errors[:email].first if @user.errors[:email].any?
-  errors[:username] = @user.errors[:username].first if @user.errors[:username].any?
-  errors[:password] = @user.errors[:password].first if @user.errors[:password].any?
-  errors[:confirmPassword] = @user.errors[:confirmPassword].first if @user.errors[:confirmPassword].any?
-  render json: { errors: errors }, status: :unprocessable_entity
+      errors[:email] = @user.errors[:email].first if @user.errors[:email].any?
+      errors[:username] = @user.errors[:username].first if @user.errors[:username].any?
+      errors[:password] = @user.errors[:password].first if @user.errors[:password].any?
+      errors[:confirmPassword] = @user.errors[:confirmPassword].first if @user.errors[:confirmPassword].any?
+      render json: { errors: errors }, status: :unprocessable_entity
     end
   end
 
