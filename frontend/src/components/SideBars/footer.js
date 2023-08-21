@@ -1,6 +1,5 @@
 import "./footer.css";
 import logo from "../assets/stackoverflow_icon.png";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function Footer() {
   return (

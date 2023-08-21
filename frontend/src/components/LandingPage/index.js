@@ -7,7 +7,6 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 import intercom from "../assets/intercom.png";
 import expensify from "../assets/expensify.png";
-import microsoft from "../assets/microsoft.png";
 import instacart from "../assets/instacart.png";
 
 function Landing() {

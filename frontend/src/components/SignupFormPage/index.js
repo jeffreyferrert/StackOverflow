@@ -78,7 +78,7 @@ function SignupFormPage() {
         <span>
           Collaborate and share knowledge with a private group for FREE.
           <br />
-          <a href="#" >
+          <a target="_blank" rel="noreferrer" href="https://stackoverflow.co/teams/">
             Get Stack Overflow for Teams free for up to 50 users.
           </a>
         </span>
@@ -86,7 +86,7 @@ function SignupFormPage() {
 
       <div className="right-panel">
 
-      <form onSubmit={handleSubmit} className={`su-form ${errors.length > 0 ? "adderror" : ""}`} noValidate="novalidate">
+        <form onSubmit={handleSubmit} className={`su-form ${errors.length > 0 ? "adderror" : ""}`} noValidate="novalidate">
           <div className="su-form-container">
             <label>
               Username
@@ -99,7 +99,7 @@ function SignupFormPage() {
             </label>
 
             {errors.username && <li className="errorsup">Username: {errors.username}</li>}
-            
+
             <label>
               Email
               <input

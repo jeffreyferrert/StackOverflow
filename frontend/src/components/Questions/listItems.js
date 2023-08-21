@@ -3,7 +3,7 @@ import ListItem from "./listItem";
 import "./Styles/ListItems.css";
 import { fetchQuestions, getQuestions } from "../../store/questions";
 import { useEffect, useState } from "react";
-import { Link, useHistory, useLocation, useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory, useLocation } from "react-router-dom/cjs/react-router-dom.min";
 
 function ListItems() {
   const sessionUser = useSelector((state) => state.session.user);

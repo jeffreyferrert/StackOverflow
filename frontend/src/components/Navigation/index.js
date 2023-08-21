@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import { useHistory } from "react-router-dom";
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
-import menu from "../assets/menu.png"
 import lupa from "../assets/lupa.png"
 import logo from "../assets/logo-stackoverflow.png"
 import logoicon from "../assets/stackoverflow_icon.png"
-import { fetchQuestions } from '../../store/questions';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
   const history = useHistory();
   const [input, setInput] = useState('')
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const dispatch = useDispatch();
 
 
   useEffect(() => {

@@ -21,7 +21,7 @@ function RigthSideBar() {
     <div className="rsb-main-container {windowWidth < 500 ? hide : ''}">
       <div className="rsb-box1">
         <p>Custom Filters</p>
-        <a>Create a custom filter</a>
+        <a href="/questions">Create a custom filter</a>
       </div>
 
       <div className="rsb-box2">
