@@ -59,9 +59,20 @@ function Navigation() {
         </NavLink>
 
         <ol className="topbar-options">
-          <li className="topbar-options-li {windowWidth < 500 ? hide : ''}"><a href="/about">About</a></li>
-          <li className="topbar-options-li"><a href="/questions">Questions</a></li>
-          <li className="topbar-options-li {windowWidth < 500 ? hide : ''}"><a href="teams.com">For Teams</a></li>
+          <li className="topbar-options-li">
+            <a href="/questions">Questions</a>
+          </li>
+          <li className="topbar-options-li {windowWidth < 500 ? hide : ''}">
+            <a href="https://www.linkedin.com/in/jferrertorres/" target="_blank" rel="noreferrer">
+              <i class="fa-brands fa-linkedin fa-lg"></i><span />
+              Linkedin
+            </a>
+          </li>
+          <li className="topbar-options-li {windowWidth < 500 ? hide : ''}">
+            <a href="https://github.com/jeffreyferrert" target="_blank" rel="noreferrer">
+              <i class="fa-brands fa-github fa-lg"></i><span />Github
+            </a>
+          </li>
         </ol>
 
         <form onSubmit={handleSubmit} className="topbar-form {windowWidth < 500 ? hide : ''}" >

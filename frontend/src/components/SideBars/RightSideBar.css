@@ -85,6 +85,10 @@
   width: 50%;
 }
 
+.rsb-box2 a{
+ color: white;
+}
+
 .rsb-box2 button:hover {
   background-color: #0074cc;
 }

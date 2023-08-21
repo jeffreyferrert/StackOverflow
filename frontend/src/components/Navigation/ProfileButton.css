@@ -12,7 +12,7 @@
 
 .session-cont {
     position: relative;
-
+    z-index: 100;
 }
 
 .profile-dropdown {
@@ -82,7 +82,7 @@ h5 {
 
 @media (max-width: 390px) {
 
-.main-button {
-    margin-right: 10px;
-}
+    .main-button {
+        margin-right: 10px;
+    }
 }

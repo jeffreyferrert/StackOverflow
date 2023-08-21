@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-// import './SignupForm.css';
 import './SignupForm.css';
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import temp from "../assets/stackoverflow_icon.png"
@@ -31,7 +30,7 @@ function SignupFormPage() {
     };
   }, []);
 
-  if (sessionUser) return <Redirect to="/" />;
+  if (sessionUser) return <Redirect to="/questions" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -87,14 +86,10 @@ function SignupFormPage() {
 
       <div className="right-panel">
 
-        <form onSubmit={handleSubmit} className="su-form">
-          <ul>
-            {errors.map((error) => <li key={error}>{error}</li>)}
-          </ul>
-
+      <form onSubmit={handleSubmit} className={`su-form ${errors.length > 0 ? "adderror" : ""}`} noValidate="novalidate">
           <div className="su-form-container">
             <label>
-              Display name
+              Username
               <input
                 type="text"
                 value={username}
@@ -103,6 +98,8 @@ function SignupFormPage() {
               />
             </label>
 
+            {errors.username && <li className="errorsup">Username: {errors.username}</li>}
+            
             <label>
               Email
               <input
@@ -112,6 +109,8 @@ function SignupFormPage() {
                 required
               />
             </label>
+
+            {errors.email && <li className="errorsup">Email: {errors.email}</li>}
 
             <label>
               Password
@@ -123,6 +122,8 @@ function SignupFormPage() {
               />
             </label>
 
+            {errors.password && <li className="errorsup">Password: {errors.password}</li>}
+
             <label>
               Confirm Password
               <input
@@ -132,6 +133,8 @@ function SignupFormPage() {
                 required
               />
             </label>
+
+            {errors.confirmPassword && <li className="errorsup">Confirm Password: {errors.confirmPassword}</li>}
 
             <span>
               Passwords must contain at least eight characters, including at least 1 letter and 1 number.

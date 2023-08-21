@@ -6,15 +6,15 @@ function LeftSideBar() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-      const handleResize = () => {
-          setWindowWidth(window.innerWidth);
-      };
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
 
-      window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize);
 
-      return () => {
-          window.removeEventListener('resize', handleResize);
-      };
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
@@ -30,29 +30,28 @@ function LeftSideBar() {
           <span />
           <li className="select-option">Questions</li>
         </div>
-        <li>Tags</li>
-        <li>Users</li>
-        <li>Companies</li>
+        <li><a target="_blank" rel="noreferrer" href="https://stackoverflow.com/tags">Tags</a></li>
+        <li><a target="_blank" rel="noreferrer" href="https://stackoverflow.com/users">Users</a></li>
+        <li><a target="_blank" rel="noreferrer" href="https://stackoverflow.com/jobs/companies">Companies</a></li>
+
       </ul>
 
       <p>COLLECTIBLES</p>
-      <Link to="/teams" className="link">
-        <div className="collectibles">
-          <div className="c-span">
-            <span class="fa-stack fa-2xs" >
-              <i class="fa-solid fa-certificate fa-stack-2x" style={{ color: "#f48225", }} />
-              <i class="fa-solid fa-star fa-stack-1x" style={{ color: "#FFFFFF", }} />
-            </span>
 
-          </div>
-
-          <p className="c-parra">Explore Collectives</p>
-
+      <div className="collectibles">
+        <div className="c-span">
+          <span class="fa-stack fa-2xs" >
+            <i class="fa-solid fa-certificate fa-stack-2x" style={{ color: "#f48225", }} />
+            <i class="fa-solid fa-star fa-stack-1x" style={{ color: "#FFFFFF", }} />
+          </span>
         </div>
-      </Link>
-      <Link to="/teams" className="link">
-        <p className="teams">TEAMS</p>
-      </Link>
+        <p>
+        <a target="_blank" rel="noreferrer" href="https://stackoverflow.com/collectives">
+          Explore collectives
+        </a>
+        </p>
+      </div>
+
     </div>
   );
 }

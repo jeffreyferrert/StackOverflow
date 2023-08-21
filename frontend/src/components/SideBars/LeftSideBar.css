@@ -41,6 +41,10 @@ li:hover {
   color: black;
 }
 
+li a{
+  color: hsl(210, 8%, 35%);
+
+}
 .select-option {
   font-weight: bold;
   /* background-color: hsl(210, 8%, 95%); */
@@ -54,6 +58,11 @@ li:hover {
   display: flex;
   /* justify-content: center; */
   align-items: center;
+  /* justify-content: center; */
+}
+
+.collectibles > p{
+margin: 0;
 }
 
 .world {

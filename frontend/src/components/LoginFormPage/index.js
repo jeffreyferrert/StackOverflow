@@ -19,6 +19,7 @@ function LoginFormPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
+
     return dispatch(sessionActions.login({ credential, password }))
       .catch(async (res) => {
         let data;
@@ -46,14 +47,9 @@ function LoginFormPage() {
       <img className="li-icon" src={temp} alt="so_icon" />
       <div className="li-form-container">
 
-        <form onSubmit={handleSubmit} >
-
-          <ul>
-            {errors.map(error => <li key={error}>{error}</li>)}
-          </ul>
-
+        <form onSubmit={handleSubmit} noValidate="novalidate">
           <label>
-            Username or Email
+            Username
             <input
               type="text"
               value={credential}
@@ -61,9 +57,9 @@ function LoginFormPage() {
               required
             />
           </label>
+          <div className="error-message">{errors?.credential}</div>
 
           <span></span><br />
-
           <label>
             Password
             <input
@@ -74,8 +70,11 @@ function LoginFormPage() {
             />
           </label>
 
-          <button type="submit" className="li-login">Log In</button>
+          <ul>
+            {errors.map(error => <li className="errors" key={error}>{error}</li>)}
+          </ul>
 
+          <button type="submit" className="li-login">Log In</button>
         </form>
         <button onClick={demoUser} className="li-login">Demo User</button>
       </div>

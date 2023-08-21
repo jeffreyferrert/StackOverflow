@@ -48,7 +48,7 @@ function ListItems() {
   };
 
   return (
-    <div className="lis-main-container">
+    <div className="lis-main-container" id="top-of-landing-page">
       <div className="lis-header-container">
         <div className="lis-headline">
           <p>All Questions</p>

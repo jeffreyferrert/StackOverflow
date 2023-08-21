@@ -5,13 +5,14 @@ import { createAnswer, fetchAnswers, getAnswers } from "../../store/answers";
 import AnswerItem from "./answerItem";
 import "./Answers.css";
 
-function AnswersList({ question }) {
+function AnswersList({question}) {
   const sessionUser = useSelector((state) => state.session.user);
   const { questionId } = useParams();
   const history = useHistory();
   const dispatch = useDispatch();
   const answers = useSelector(getAnswers);
   const [body, setBody] = useState("");
+ 
 
   useEffect(() => {
     dispatch(fetchAnswers());
@@ -34,7 +35,7 @@ function AnswersList({ question }) {
 
   return (
     <div className="ans-main-container">
-      <h3>{question.answerCount} Answers</h3>
+      <h3>{answers.filter((answer) => answer.questionId === parseInt(questionId)).length} Answers</h3>
       {answers.map(
         (answer) =>
           answer.questionId === parseInt(questionId) && (

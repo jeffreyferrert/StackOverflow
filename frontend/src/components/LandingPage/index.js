@@ -10,10 +10,6 @@ import expensify from "../assets/expensify.png";
 import microsoft from "../assets/microsoft.png";
 import instacart from "../assets/instacart.png";
 
-// import Footer from "../SideBars/footer";
-
-
-
 function Landing() {
   const [wordChanging, setwordChanging] = useState("developer");
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -29,8 +25,6 @@ function Landing() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
-  // {windowWidth <= 500 ? logoicon : logo}
 
   function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -65,11 +59,16 @@ function Landing() {
               answer theirs
             </span>
             <br />
-            <button className="btn-p1-a">Join the community</button>
+
+            <button className="btn-p1-a">
+              <Link to="/signup">
+                Join the community
+              </Link>
+            </button>
             <br />
             <div className="pre-search-content">
               or
-              <Link to="/" className="search-content">
+              <Link to="/questions" className="search-content">
                 {" "}
                 search content
               </Link>
@@ -82,7 +81,12 @@ function Landing() {
               Want a secure, private space for your technical knowledge?
             </span>
             <br />
-            <button className="btn-p1-b">Discover Teams</button>
+            <button className="btn-p1-b">
+              <a href="https://stackoverflow.co/teams/">
+                Discover Teams
+              </a>
+            </button>
+
           </div>
         </div>
 
@@ -143,10 +147,14 @@ function Landing() {
               technical challenges, and one of the most popular websites in the
               world.
             </div>
-            <button className="btn-p1-a">Join the community</button>
+            <button className="btn-p1-a">
+              <Link to="/signup">
+                Join the community
+              </Link>
+            </button>
             <br />
             <div className="pre-search-content">
-              <Link to="/" className="search-content">
+              <Link to="/questions" className="search-content">
                 {" "}
                 search content
               </Link>
@@ -166,8 +174,16 @@ function Landing() {
               knowledge.
             </div>
             <div className="g-btn">
-              <button className="btn-p1-b">For Large organizations</button>
-              <button className="btn-p1-b">For small items</button>
+              <button className="btn-p1-b">
+                <a href="https://try.stackoverflow.co/explore-teams">
+                  For Large organizations
+                </a>
+              </button>
+              <button className="btn-p1-b">
+                <a href="https://stackoverflow.co/teams/">
+                  For small teams
+                </a>
+              </button>
             </div>
           </div>
         </div>
@@ -181,7 +197,6 @@ function Landing() {
             <img className="logo-img" src={intercom} alt="so_icon" />
             <img className="logo-img" src={expensify} alt="so_icon" />
             <img className="logo-img" src={instacart} alt="so_icon" />
-            {/* <img className="logo-img" src={microsoft} alt="so_icon" /> */}
           </div>
         </div>
 
@@ -246,7 +261,6 @@ function Landing() {
             <span>Box</span>
           </div>
         </div>
-        {/* <Footer /> */}
       </div>
     </div>
   );
