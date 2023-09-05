@@ -76,17 +76,18 @@ flex-direction: row;
 width: 220px;
 }
 
-@media (max-width: 390px) {
+@media screen and (max-width: 600px) {
   .f-content {
     padding: 16px !important;
     display: flex;
     flex-direction: column;
     margin: 0;
+    width: 50%;
   }
 
   .footer-main-container {
-    width: 390px !important;
-    height: 394px;
+    width: 100% !important;
+    height: 100%;
   }
 
   .f-logo-img {
@@ -96,7 +97,7 @@ width: 220px;
 
   .f-c1 {
     padding: 0 12px 14px 0;
-
+    
   }
 
   .f-c1 span {
@@ -108,7 +109,7 @@ width: 220px;
 
   .f-c1 ul {
     display: flex;
-    width: 340px;
+    width: 100%;
     margin: 0;
     padding: 0;
     flex-wrap: wrap;

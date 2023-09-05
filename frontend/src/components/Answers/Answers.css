@@ -1,7 +1,9 @@
 .ansi-main-container {
   display: flex;
   justify-content: center;
+  margin-left: 10px;
 }
+
 
 .ansi-post-left-container-top {
   display: flex;
@@ -53,7 +55,7 @@
   margin-bottom: 16px;
   clear: both;
   font: inherit;
-  text-align: left;
+  text-align: justify;
   color: hsl(210, 8%, 15%);
   line-height: 1.5;
 }
@@ -118,4 +120,12 @@
   font-size: 13px;
   tab-size: 4;
   background-color: white;
+}
+
+@media screen and (max-width: 600px) {
+
+  .ans-main-h3 {
+    margin: 10px !important;
+
+  }
 }

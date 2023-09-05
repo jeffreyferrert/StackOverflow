@@ -11,7 +11,7 @@
   margin-bottom: 10px;
 }
 
-.lis-headline > p {
+.lis-headline>p {
   font-size: 27px;
   margin: 0px;
 }
@@ -115,18 +115,25 @@ hr {
 }
 
 
-@media (max-width: 390px) {
+@media screen and (max-width: 600px) {
   .hide {
     display: none;
   }
 
   .lis-main-container {
-    width: 390px !important;
-    padding: 24px 16px;
+    width: 100% !important;
+    padding: 24px 0px;
+  }
+
+  .lis-header-container {
+    width: 100% !important;
   }
 
   .lis-headline {
-    margin: 0 15px;
+    width: 90%;
+    /* margin: 0 15px; */
+    padding: 0 15px;
+
   }
 
   .lis-headline p {
@@ -136,13 +143,22 @@ hr {
   .lis-headline2 {
     display: flex;
     flex-direction: column;
-    margin-left: 15px;
-    margin-right: 15px;
+    /* padding: 0 15px; */
+    padding-left: 15px;
+    /* margin-left: 15px; */
+    padding-right: 15px;
+    /* width: 100% ; */
+  }
+
+  .lis-headline2-b {
+    width: 100%;
 
   }
 
   .lis-headline2-b {
     margin-top: 10px;
+    width: 100%;
+
   }
 
   .lis-headline2-b ul {
@@ -150,7 +166,7 @@ hr {
   }
 
   .lis-headline2-b button {
-    margin-left: 90px;
+    margin-left: auto;
   }
 
 

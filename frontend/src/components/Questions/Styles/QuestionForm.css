@@ -171,7 +171,11 @@
 }
 
 
-@media (max-width: 390px) {
+@media screen and (max-width: 600px) {
+  .qf-main-container {
+    /* width: 70%; */
+    /* padding: 0; */
+  }
   .qf-notice h1 {
     margin: 22px 0;
     font-size: 22px;
@@ -182,10 +186,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 85%;
+
   }
 
   .qf-message {
-    width: 290px;
+    width: 100%;
   }
 
   .qf-message p {
@@ -195,14 +201,14 @@
 
 
   .qf-post-title {
-    width: 290px;
+    width: 85%;
   }
 
   .qf-post-body {
-    width: 290px;
+    width: 85%;
   }
   
   .qf-post-tags {
-    width: 290px;
+    width: 85%;
   }
 }

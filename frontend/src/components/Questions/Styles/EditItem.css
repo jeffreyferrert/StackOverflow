@@ -173,3 +173,45 @@
     background-color: hsla(206, 100%, 40%, 1);
   }
   
+
+@media screen and (max-width: 600px) {
+  .qfe-main-container {
+    /* width: 70%; */
+    /* padding: 0; */
+  }
+  .qfe-notice h1 {
+    margin: 22px 0;
+    font-size: 22px;
+    height: auto;
+  }
+
+  .qfe-notice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 85%;
+
+  }
+
+  .qfe-message {
+    width: 100%;
+  }
+
+  .qfe-message p {
+    font-size: 14px;
+    color: hsl(210, 8%, 25%);
+  }
+
+
+  .qfe-post-title {
+    width: 85%;
+  }
+
+  .qfe-post-body {
+    width: 85%;
+  }
+  
+  .qfe-post-tags {
+    width: 85%;
+  }
+}

@@ -35,7 +35,7 @@ function AnswersList({question}) {
 
   return (
     <div className="ans-main-container">
-      <h3>{answers.filter((answer) => answer.questionId === parseInt(questionId)).length} Answers</h3>
+      <h3 className="ans-main-h3">{answers.filter((answer) => answer.questionId === parseInt(questionId)).length} Answers</h3>
       {answers.map(
         (answer) =>
           answer.questionId === parseInt(questionId) && (

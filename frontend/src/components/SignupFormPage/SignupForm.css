@@ -142,7 +142,7 @@ span {
 }
 
 
-@media (max-width: 390px) {
+@media screen and (max-width: 600px) {
     .hide {
         display: none;
     }
